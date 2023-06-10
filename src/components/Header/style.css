@@ -3,7 +3,6 @@ header {
   width: 100vw;
   height: 10vH;
   background-color: #8ecae6;
-  border: solid 5px red;
 
   display: flex;
   flex-direction: row-reverse;
@@ -25,6 +24,7 @@ header {
 
 .appLogo {
   position: relative;
+  width: 30vw;
 
   font-size: 30px;
   font-weight: bold;
