@@ -1,0 +1,23 @@
+header {
+  width: 100vw;
+  height: 10vH;
+  background-color: #8ecae6;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.aboutGame {
+  background-color: #ffb703;
+  border: 1px solid black;
+
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.appLogo {
+
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Amatic SC", sans-serif;
+}

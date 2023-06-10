@@ -3,8 +3,9 @@ import './style.css';
 
 export const Header = () => {
   return (
-    <>
-      <p>Nazdar</p>
-    </>
+    <header>
+      <button className="aboutGame">?</button>
+      <h1 className="appLogo">Neztrať hlavu!</h1>
+    </header>
   );
 };
