@@ -3,8 +3,8 @@ import './style.css';
 
 export const Footer = () => {
   return (
-    <>
-      <p>Ahoj</p>
-    </>
+    <footer>
+      <p>© 2023 Neztrať hlavu</p>
+    </footer>
   );
 };
