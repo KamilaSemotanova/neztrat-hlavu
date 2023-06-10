@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import './style.css';
 import {chemicals} from "../../chemicals";
 import {InfoBox} from "../InfoBox";
+import {MixResult} from "../MixResult";
 
 
 export const ChemDropdown = () => {
   const [select1, setSelect1] = useState();
   const [select2, setSelect2] = useState();
   const [chemicalInfo, setChemicalInfo] = useState();
+  const [mix, setMix] = useState(false);
   const handleOpenInfoBox = (select) => {
     const selectedId = select==="select1" ? select1 : select2;
     const selectedChemical = chemicals.find((chemical) => chemical.id===selectedId);
@@ -15,10 +17,16 @@ export const ChemDropdown = () => {
     console.log(selectedChemical)
   }
 
+  const handleSubmit = () => {
+    event.preventDefault()
+    console.log(select1);
+    setMix(!mix);
+  }
+
   return (
     <div className="seznam-chemikalii">
       <div className="seznam-chemikálii-body">
-        <form className="seznam-chemikalii-form">
+        <form className="seznam-chemikalii-form" onSubmit={handleSubmit}>
           <label>
             <div className="seznam-chemikalii-label">
               Vyberte první chemikálii:
@@ -40,11 +48,12 @@ export const ChemDropdown = () => {
             <button className="btn" type="button" disabled={select2 ? false : true} onClick={() => handleOpenInfoBox("select2")}>?</button>
           </label>
             <div className="seznam-chemikalii-controls">
-                <button className="btn" type="submit">Míchat</button>
+                <button className="btn" type="submit" disabled={(select1 && select2) ? false : true}>Míchat</button>
             </div>
         </form>
       </div>
       {chemicalInfo && <InfoBox name={chemicalInfo.nameOfProduct} chemical={chemicalInfo.nameOfChemical} products={chemicalInfo.otherProducts} use={chemicalInfo.use} specs={chemicalInfo.specification} warning={chemicalInfo.warningSign}/> }
+      {mix ? <MixResult chemicalID1={select1} chemicalID2={select2} /> : null}
     </div>
   );
 };
