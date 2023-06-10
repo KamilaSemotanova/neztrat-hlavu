@@ -3,6 +3,7 @@ footer {
 
   position: absolute;
   bottom: 0;
+  width: 100vw;
 
   font-family: "Amatic SC", sans-serif;
 }
