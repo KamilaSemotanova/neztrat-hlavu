@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
 import './style.css';
+import {chemicals} from "../../chemicals";
+import {InfoBox} from "../InfoBox";
+
 
 export const ChemDropdown = () => {
-  const [select1, setSelect1] = useState("");
-  const [select2, setSelect2] = useState("");
-  const handleClick = (evt) => {
-    evt.preventDefault();
-    console.log(select1);
-    console.log(select2)
+  const [select1, setSelect1] = useState();
+  const [select2, setSelect2] = useState();
+  const [chemicalInfo, setChemicalInfo] = useState();
+  const handleOpenInfoBox = (select) => {
+    const selectedId = select==="select1" ? select1 : select2;
+    const selectedChemical = chemicals.find((chemical) => chemical.id===selectedId);
+    setChemicalInfo(selectedChemical);
+    console.log(selectedChemical)
   }
 
   return (
@@ -20,16 +25,9 @@ export const ChemDropdown = () => {
             </div>
             <select onChange={(evt) => setSelect1(evt.target.value)}>
               <option value="">Vyberte</option>
-              <option value="savo" disabled={(select2==="savo") ? true : false}>Savo</option>
-              <option value="ocet" disabled={(select2==="ocet") ? true : false}>Ocet</option>
-              <option value="krtek" disabled={(select2==="krtek") ? true : false}>Krtek</option>
-              <option value="voda" disabled={(select2==="voda") ? true : false}>Voda</option>
-              <option value="okena" disabled={(select2==="okena") ? true : false}>Okena</option>
-              <option value="peroxid" disabled={(select2==="peroxid") ? true : false}>Peroxid vodíku</option>
-              <option value="odlakovac" disabled={(select2==="odlakovac") ? true : false}>Odlakovač</option>
-              <option value="sanytol" disabled={(select2==="sanytol") ? true : false}>Sanytol</option>
+              {chemicals.map((chemical) => <option key={chemical.id} value={chemical.id} disabled={select2===chemical.id ? true : false}>{chemical.nameOfProduct}</option>)};
             </select>
-            <button className="btn" onClick={handleClick}>?</button>
+            <button className="btn" type="button" disabled={select1 ? false : true} onClick={() => handleOpenInfoBox("select1")}>?</button>
           </label>
           <label>
             <div className="seznam-chemikalii-label">
@@ -37,22 +35,16 @@ export const ChemDropdown = () => {
             </div>
             <select onChange={(evt) => setSelect2(evt.target.value)}>
               <option value="">Vyberte</option>
-              <option value="savo" disabled={(select1==="savo") ? true : false}>Savo</option>
-              <option value="ocet" disabled={(select1==="ocet") ? true : false}>Ocet</option>
-              <option value="krtek" disabled={(select1==="krtek") ? true : false}>Krtek</option>
-              <option value="voda" disabled={(select1==="voda") ? true : false}>Voda</option>
-              <option value="okena" disabled={(select1==="okena") ? true : false}>Okena</option>
-              <option value="peroxid" disabled={(select1==="peroxid") ? true : false}>Peroxid vodíku</option>
-              <option value="odlakovac" disabled={(select1==="odlakovac") ? true : false}>Odlakovač</option>
-              <option value="sanytol" disabled={(select1==="sanytol") ? true : false}>Sanytol</option>
+              {chemicals.map((chemical) => <option key={chemical.id} value={chemical.id} disabled={select1===chemical.id ? true : false}>{chemical.nameOfProduct}</option>)};
             </select>
-            <button className="btn" onClick={handleClick}>?</button>
+            <button className="btn" type="button" disabled={select2 ? false : true} onClick={() => handleOpenInfoBox("select2")}>?</button>
           </label>
             <div className="seznam-chemikalii-controls">
                 <button className="btn" type="submit">Míchat</button>
             </div>
         </form>
       </div>
+      {chemicalInfo && <InfoBox name={chemicalInfo.nameOfProduct} chemical={chemicalInfo.nameOfChemical} products={chemicalInfo.otherProducts} use={chemicalInfo.use} specs={chemicalInfo.specification} warning={chemicalInfo.warningSign}/> }
     </div>
   );
 };

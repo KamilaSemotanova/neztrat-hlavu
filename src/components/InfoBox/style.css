@@ -1,0 +1,15 @@
+.infobox__container {
+    width: 30em;
+    background-color: #8ecae6;
+    border: 1px solid red;
+    border-radius: 15px;
+}
+
+.infobox__heading {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 15px 15px 0 0;
+    padding:10px;
+    font-family: "Amatic SC", sans-serif;
+    background-color: #ffb703;
+}

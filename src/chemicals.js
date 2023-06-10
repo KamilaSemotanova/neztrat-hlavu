@@ -1,6 +1,6 @@
 export const chemicals = [
   {
-    id: 1,
+    id: 'Krtek',
     nameOfProduct: 'Krtek',
     nameOfChemical: 'Hydroxid sodný',
     otherProducts: 'Domestos',
@@ -9,7 +9,7 @@ export const chemicals = [
     warningSign: 'corrosive',
   },
   {
-    id: 1 << 1,
+    id: 'Ocet',
     nameOfProduct: 'Ocet',
     nameOfChemical: 'Kyselina octová',
     otherProducts: '',
@@ -18,7 +18,7 @@ export const chemicals = [
     warningSign: 'corrosive, flammable',
   },
   {
-    id: 1 << 2,
+    id: 'Aceton',
     nameOfProduct: 'Odlakovač (s acetonem)',
     nameOfChemical: 'Aceton',
     otherProducts: 'Ředidla',
@@ -27,7 +27,7 @@ export const chemicals = [
     warningSign: 'flammable',
   },
   {
-    id: 1 << 3,
+    id: 'Amoniak',
     nameOfProduct: 'Okena',
     nameOfChemical: 'Sloučeniny s amoniakem',
     otherProducts: 'Hnojiva',
@@ -36,7 +36,7 @@ export const chemicals = [
     warningSign: 'corrosiv, dangerous, lebka',
   },
   {
-    id: 1 << 4,
+    id: 'Peroxid',
     nameOfProduct: 'Peroxid vodíku',
     nameOfChemical: 'Peroxid vodíku',
     otherProducts: '',
@@ -45,7 +45,7 @@ export const chemicals = [
     warningSign: 'corrosive, silný oxidant',
   },
   {
-    id: 1 << 5,
+    id: 'Savo',
     nameOfProduct: 'Savo',
     nameOfChemical: 'Chlornan sodný',
     otherProducts: 'Bělidlo, domestos',
@@ -54,7 +54,7 @@ export const chemicals = [
     warningSign: 'corrosive, dangerous',
   },
   {
-    id: 1 << 6,
+    id: 'Ethanol',
     nameOfProduct: 'Líh',
     nameOfChemical: 'Ethanol',
     otherProducts: '',
@@ -63,36 +63,21 @@ export const chemicals = [
     warningSign: 'flammable',
   },
   {
-    id: 1 << 7,
-    nameOfProduct: '',
-    nameOfChemical: '',
-    otherProducts: '',
-    use: '',
-    specification: '',
-    warningSign: '',
+    id: "Voda",
+    nameOfProduct: 'Voda',
+    nameOfChemical: 'Voda',
+    otherProducts: 'potrubí',
+    use: 'k pití',
+    specification: '???',
+    warningSign: 'au',
   },
 ];
 
-chemicals.map(
-  ({
-    nameOfProduct,
-    nameOfChemical,
-    otherProducts,
-    use,
-    specification,
-    warningSign,
-  }) => {
-    return (
-      <div classname="chemicalCard">
-        <h1 classname="chemicalCard__name">{nameOfProduct}</h1>
-        <ul>
-          <li>{nameOfChemical}</li>
-          <li>{otherProducts}</li>
-          <li>{use}</li>
-          <li>{specification}</li>
-        </ul>
-        <div>{warningSign}</div>
-      </div>
-    );
-  },
-);
+
+
+
+
+
+
+
+
