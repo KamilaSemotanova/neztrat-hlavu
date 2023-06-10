@@ -10,11 +10,9 @@ export const Chemical = ({id, url, name, chemical, products, use, specs, warning
   }
 
   return (
-    <div>
-    <button>
-      <img src={url} alt="product picture" className='chemical' onClick={handleClick} />
-    </button>
-    {openInfoBox && <InfoBox id={id} name={name} chemical={chemical} products={products} use={use} specs={specs} warnings={warnings}/>}
+    <div onClick={handleClick} >
+      <img src={url} alt="product picture" className='chemical' />
+      {openInfoBox && <InfoBox id={id} name={name} chemical={chemical} products={products} use={use} specs={specs} warnings={warnings}/>}
     </div>
   )
 }
