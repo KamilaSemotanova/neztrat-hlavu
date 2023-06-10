@@ -1,0 +1,7 @@
+.infoAbout {
+  position: absolute;
+  left: calc(50vw/2);
+  top: calc(50vh/2);
+  background-color: #8ecae6;
+  padding: 10%;
+}
