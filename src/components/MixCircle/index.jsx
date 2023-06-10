@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './style.css';
 
-
-export const MixCircle = () => {
-  return (<div className='mixCircle'></div>)
-}
+export const MixCircle = (chemicalList) => {
+  console.log(chemicalList);
+  return <div className="mixCircle"></div>;
+};

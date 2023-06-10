@@ -6,6 +6,7 @@ import { MixCircle } from '../MixCircle';
 
 export const ChemCircle = () => {
   const [draggedElement, setDraggedElement] = useState();
+  const [mixCircleList, setmixCircleList] = useState({});
 
   const handleOnTouchStart = (id) => {
     setDraggedElement(id);
@@ -21,9 +22,13 @@ export const ChemCircle = () => {
       event.changedTouches[0].pageX,
       event.changedTouches[0].pageY,
     );
-    if (finalPosition.classList.value === 'mixCircle') {
-      console.log(finalPosition);
-    }
+
+    // if (mixCircleList.length <= 1) {
+    finalPosition.classList.value === 'mixCircle' &&
+      setmixCircleList({ draggedElement });
+    // }
+
+    console.log(mixCircleList);
   };
 
   return (
@@ -50,7 +55,7 @@ export const ChemCircle = () => {
           }}
         />
       ))}
-      <MixCircle />
+      <MixCircle chemicalList={mixCircleList} />
     </>
   );
 };
