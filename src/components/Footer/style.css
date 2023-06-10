@@ -1,3 +1,6 @@
 footer {
   color: #ffb703;
+
+  position: absolute;
+  bottom: 0;
 }
