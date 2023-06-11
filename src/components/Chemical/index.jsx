@@ -14,6 +14,8 @@ export const Chemical = ({
   onTouchStart,
   onTouchMove,
   onTouchEnd,
+  onDragStart,
+  mixList,
   positionY,
   positionX,
 }) => {
@@ -27,11 +29,13 @@ export const Chemical = ({
 
   return (
     <div
+      draggable
       onClick={handleClick}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      className="chemical"
+      onDragStart={onDragStart}
+      className={mixList.includes(id) ? "chemical disabled" : "chemical"}
       style={{
         position: 'absolute',
         transform: `translate(${positionY}px, ${positionX}px )`,

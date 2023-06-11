@@ -3,4 +3,13 @@
   height: 200px;
   aspect-ratio: 1/1;
   border-radius: 100px;
+  padding: 50px;
+}
+
+.chemical__mini {
+width: 50%;
+}
+
+.chemical__disabled {
+  pointer-events: none;
 }

@@ -15,7 +15,12 @@ export const ChemCircle = () => {
       setDraggedElement(id);
     }
   };
-
+  const handleOnDragStart = (id) => {
+    if (mixCircleList.includes(draggedElement) === false) {
+      setDraggedElement(id)
+      console.log(id)
+    }
+  }
   const handleOnTouchMove = (event) => {
     if (mixCircleList.includes(draggedElement) === false) {
       const positionX = event.touches[0].pageX;
@@ -37,6 +42,14 @@ export const ChemCircle = () => {
     setPosition([]);
   };
 
+  const handleOnDrop = () => {
+    setMixCircleList((prevValue) => [...prevValue, draggedElement]);
+    setDraggedElement();
+  }
+  const handleOnDragOver = (evt) => {
+    evt.preventDefault()
+  }
+
   return (
     <>
       {chemicals.map((chemical) => (
@@ -50,9 +63,11 @@ export const ChemCircle = () => {
           use={chemical.use}
           specs={chemical.specification}
           warnings={chemical.warningSign}
+          mixList={mixCircleList}
           onTouchStart={() => {
             handleOnTouchStart(chemical.id);
           }}
+          onDragStart={() => handleOnDragStart(chemical.id)}
           onTouchMove={(event) => {
             handleOnTouchMove(event);
           }}
@@ -73,7 +88,7 @@ export const ChemCircle = () => {
           src={chemicals.find((chemical) => chemical.id === draggedElement).url}
         />
       )}
-      <MixCircle mixList={mixCircleList} />
+      <MixCircle disabled={mixCircleList.length === 2 ? true : false} mixList={mixCircleList} onDrop={handleOnDrop} onDragOver={handleOnDragOver} />
       {mixCircleList.length === 2 && (
         <MixResult
           chemicalID1={mixCircleList[0]}
