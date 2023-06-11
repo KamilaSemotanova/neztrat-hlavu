@@ -27,8 +27,10 @@ export const Chemical = ({
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+      className='chemical'
+      // style={{ pointerEvents: 'none' }}
     >
-      <img src={url} alt="product picture" className="chemical" />
+      <img src={url} alt="product picture" className="chemicalLogo" />
       {openInfoBox && (
         <InfoBox
           id={id}

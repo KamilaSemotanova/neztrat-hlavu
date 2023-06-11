@@ -3,10 +3,12 @@ import './style.css';
 import { chemicals } from '../../chemicals';
 import { Chemical } from '../Chemical';
 import { MixCircle } from '../MixCircle';
+import { MixResult } from '../MixResult';
 
 export const ChemCircle = () => {
   const [draggedElement, setDraggedElement] = useState();
-  const [mixCircleList, setmixCircleList] = useState({});
+  const [mixCircleList, setMixCircleList] = useState([]);
+  const [position, setPosition] = useState([]);
 
   const handleOnTouchStart = (id) => {
     setDraggedElement(id);
@@ -15,6 +17,8 @@ export const ChemCircle = () => {
   const handleOnTouchMove = (event) => {
     const positionX = event.touches[0].pageX;
     const positionY = event.touches[0].pageY;
+
+    setPosition([positionX, positionY]);
   };
 
   const handleOnTouchEnd = (event) => {
@@ -22,13 +26,10 @@ export const ChemCircle = () => {
       event.changedTouches[0].pageX,
       event.changedTouches[0].pageY,
     );
-
-    // if (mixCircleList.length <= 1) {
-    finalPosition.classList.value === 'mixCircle' &&
-      setmixCircleList({ draggedElement });
-    // }
-
-    console.log(mixCircleList);
+    if (finalPosition.classList.value === 'mixCircle') {
+      setMixCircleList((prevValue) => [...prevValue, draggedElement]);
+    }
+    setPosition([]);
   };
 
   return (
@@ -55,7 +56,25 @@ export const ChemCircle = () => {
           }}
         />
       ))}
-      <MixCircle chemicalList={mixCircleList} />
+      {position.length > 0 && (
+        <img
+          style={{
+            position: 'absolute',
+            width: '50px',
+            height: '50px',
+            top: position[1] + 10,
+            left: position[0] + 10,
+          }}
+          src={chemicals.find((chemical) => chemical.id === draggedElement).url}
+        />
+      )}
+      <MixCircle mixList={mixCircleList} />
+      {mixCircleList.length === 2 && (
+        <MixResult
+          chemicalID1={mixCircleList[0]}
+          chemicalID2={mixCircleList[1]}
+        />
+      )}
     </>
   );
 };
