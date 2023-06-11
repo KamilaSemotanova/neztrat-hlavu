@@ -14,12 +14,16 @@ export const Chemical = ({
   onTouchStart,
   onTouchMove,
   onTouchEnd,
+  positionY,
+  positionX,
 }) => {
   const [openInfoBox, setOpenInfoBox] = useState(false);
 
   const handleClick = () => {
     setOpenInfoBox(!openInfoBox);
   };
+
+  // console.log(positionX);
 
   return (
     <div
@@ -28,6 +32,10 @@ export const Chemical = ({
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       className="chemical"
+      style={{
+        position: 'absolute',
+        transform: `translate(${positionY}px, ${positionX}px )`,
+      }}
     >
       <img src={url} alt="product picture" className="chemicalLogo" />
       {openInfoBox && (

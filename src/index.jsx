@@ -6,7 +6,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { ChemDropdown } from './components/ChemDropdown';
 import { MixCircle } from './components/MixCircle';
-import { ChemCircle } from './components/ChemCircle';
+import { ChemCircle } from './components/ChemCircle/Circle';
 import { InfoBox } from './components/InfoBox';
 import { chemicals } from './chemicals.js';
 
