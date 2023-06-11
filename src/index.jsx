@@ -24,7 +24,6 @@ const App = () => {
       <>
         <Header />
         <ChemCircle />
-        <MixCircle />
         <Footer />
       </>
     );
