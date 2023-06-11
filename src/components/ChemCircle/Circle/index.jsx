@@ -38,18 +38,18 @@ export const ChemCircle = () => {
     setPosition([]);
   };
 
-  useLayoutEffect(() => {
-    setWidth(ref.current.offsetWidth);
-  }, []);
+  // useLayoutEffect(() => {
+  //   setWidth(ref.current.offsetWidth);
+  // }, []);
 
-  const getRadius = (r, delta, index) => {
-    return r + Math.random() * delta * 2 - delta + 20 * (index % 2);
-  };
+  // const getRadius = (r, delta, index) => {
+  //   return r + Math.random() * delta * 2 - delta + 20 * (index % 2);
+  // };
 
-  const ref = useRef(null);
-  const numberOfChemicals = chemicals.length;
-  const viewX = 300;
-  const viewY = width / 2;
+  // const ref = useRef(null);
+  // const numberOfChemicals = chemicals.length;
+  // const viewX = 300;
+  // const viewY = width / 2;
 
   return (
     <div ref={ref}>
