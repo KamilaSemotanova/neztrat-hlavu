@@ -8,6 +8,10 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  background-color: #023047;
+}
+
 .container {
   max-width: 26rem;
   margin-right: auto;
