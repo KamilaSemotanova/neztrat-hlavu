@@ -88,7 +88,7 @@ export const ChemCircle = () => {
           src={chemicals.find((chemical) => chemical.id === draggedElement).url}
         />
       )}
-      <MixCircle mixList={mixCircleList} onDrop={handleOnDrop} onDragOver={handleOnDragOver} />
+      <MixCircle disabled={mixCircleList.length === 2 ? true : false} mixList={mixCircleList} onDrop={handleOnDrop} onDragOver={handleOnDragOver} />
       {mixCircleList.length === 2 && (
         <MixResult
           chemicalID1={mixCircleList[0]}

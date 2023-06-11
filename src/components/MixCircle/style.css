@@ -9,3 +9,7 @@
 .chemical__mini {
 width: 50%;
 }
+
+.chemical__disabled {
+  pointer-events: none;
+}
