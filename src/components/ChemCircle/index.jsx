@@ -67,7 +67,7 @@ export const ChemCircle = () => {
   const viewY = width / 2;
 
   return (
-    <div ref={ref}>
+    <div className="chem_circle" ref={ref}>
       {chemicals.map((chemical, index) => {
         const angle = (2 * Math.PI * index) / numberOfChemicals;
         const radius = getRadius(width / 7, 5, index);
@@ -120,6 +120,8 @@ export const ChemCircle = () => {
         mixList={mixCircleList}
         onDrop={handleOnDrop}
         onDragOver={handleOnDragOver}
+        positionX={viewX}
+        positionY={viewY}
       />
       {mixCircleList.length === 2 && (
         <MixResult
