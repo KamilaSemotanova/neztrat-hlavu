@@ -1,3 +1,6 @@
+import savo from "./img/savo.png";
+import ocet from "./img/ocet.png";
+
 export const chemicals = [
   {
     id: 'Krtek',
@@ -7,6 +10,7 @@ export const chemicals = [
     use: 'Čištění odpadů, kotlů, potrubí, odmašťovací lázně, bělení a barvení textilií',
     specification: 'Bílý prášek, bez zápachu',
     warningSign: 'corrosive',
+    url: savo,
   },
   {
     id: 'Ocet',
@@ -16,6 +20,7 @@ export const chemicals = [
     use: 'Odmašťuje, odstraňuje usazeniny a nečistoty, leští, uvolňuje ucpané odpady, změkčuje prádlo, dále působí proti plísním',
     specification: 'Ostrý octový zápach, bezbarvá kapalina',
     warningSign: 'corrosive, flammable',
+    url: ocet,
   },
   {
     id: 'Aceton',
@@ -25,6 +30,7 @@ export const chemicals = [
     use: 'Odmašťování a čištění povrchů, odstraňování nátěrů barvy',
     specification: 'bezbarvá kapalina s výrazným zápachem',
     warningSign: 'flammable',
+    url: savo,
   },
   {
     id: 'Amoniak',
@@ -34,6 +40,7 @@ export const chemicals = [
     use: 'Bělící a čistící účinky, hnojiva, chladivo',
     specification: 'Bezbarvý plyn se štiplavým zápachem',
     warningSign: 'corrosiv, dangerous, lebka',
+    url: ocet,
   },
   {
     id: 'Peroxid',
@@ -43,6 +50,7 @@ export const chemicals = [
     use: 'Bělící účinky, dezinfekční účinky',
     specification: 'Čirá namodralá kapalina',
     warningSign: 'corrosive, silný oxidant',
+    url: savo,
   },
   {
     id: 'Savo',
@@ -52,6 +60,7 @@ export const chemicals = [
     use: 'Čištění podlah a povrchů, dezinfekce',
     specification: 'Roztok, smrdí jako bazén',
     warningSign: 'corrosive, dangerous',
+    url: ocet,
   },
   {
     id: 'Ethanol',
@@ -61,6 +70,7 @@ export const chemicals = [
     use: 'čištění, odmašťování, odstraňování některých druhů skvrn z textilu',
     specification: 'bezbarvá tekutina',
     warningSign: 'flammable',
+    url: savo,
   },
   {
     id: "Voda",
@@ -70,6 +80,7 @@ export const chemicals = [
     use: 'k pití',
     specification: '???',
     warningSign: 'au',
+    url: ocet,
   },
 ];
 
