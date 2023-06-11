@@ -11,14 +11,18 @@ export const ChemCircle = () => {
   const [position, setPosition] = useState([]);
 
   const handleOnTouchStart = (id) => {
-    setDraggedElement(id);
+    if (mixCircleList.includes(draggedElement) === false) {
+      setDraggedElement(id);
+    }
   };
 
   const handleOnTouchMove = (event) => {
-    const positionX = event.touches[0].pageX;
-    const positionY = event.touches[0].pageY;
+    if (mixCircleList.includes(draggedElement) === false) {
+      const positionX = event.touches[0].pageX;
+      const positionY = event.touches[0].pageY;
 
-    setPosition([positionX, positionY]);
+      setPosition([positionX, positionY]);
+    }
   };
 
   const handleOnTouchEnd = (event) => {
@@ -29,6 +33,7 @@ export const ChemCircle = () => {
     if (finalPosition.classList.value === 'mixCircle') {
       setMixCircleList((prevValue) => [...prevValue, draggedElement]);
     }
+    setDraggedElement();
     setPosition([]);
   };
 
