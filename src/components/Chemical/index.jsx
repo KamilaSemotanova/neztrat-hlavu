@@ -14,6 +14,8 @@ export const Chemical = ({
   onTouchStart,
   onTouchMove,
   onTouchEnd,
+  onDragStart,
+    mixList,
 }) => {
   const [openInfoBox, setOpenInfoBox] = useState(false);
 
@@ -23,11 +25,14 @@ export const Chemical = ({
 
   return (
     <div
+      draggable
       onClick={handleClick}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      className="chemical"
+      onDragStart={onDragStart}
+      className={mixList.includes(id) ? "chemical disabled" : "chemical"}
+
     >
       <img src={url} alt="product picture" className="chemicalLogo" />
       {openInfoBox && (
