@@ -15,13 +15,17 @@ export const Chemical = ({
   onTouchMove,
   onTouchEnd,
   onDragStart,
-    mixList,
+  mixList,
+  positionY,
+  positionX,
 }) => {
   const [openInfoBox, setOpenInfoBox] = useState(false);
 
   const handleClick = () => {
     setOpenInfoBox(!openInfoBox);
   };
+
+  // console.log(positionX);
 
   return (
     <div
@@ -32,7 +36,10 @@ export const Chemical = ({
       onTouchEnd={onTouchEnd}
       onDragStart={onDragStart}
       className={mixList.includes(id) ? "chemical disabled" : "chemical"}
-
+      style={{
+        position: 'absolute',
+        transform: `translate(${positionY}px, ${positionX}px )`,
+      }}
     >
       <img src={url} alt="product picture" className="chemicalLogo" />
       {openInfoBox && (
