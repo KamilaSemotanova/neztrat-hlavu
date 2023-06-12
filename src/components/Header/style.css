@@ -8,12 +8,6 @@ header {
   flex-direction: row-reverse;
 }
 
-@media (min-width: 840px) {
-  header {
-    flex-direction: row;
-  }
-}
-
 .aboutGame {
   background-color: #ffb703;
   border: 1px solid black;
@@ -29,4 +23,19 @@ header {
   font-size: 30px;
   font-weight: bold;
   font-family: "Amatic SC", sans-serif;
+}
+
+.close-about-button {
+  z-index: 2;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  position: relative;
+  top: 22vh;
+  left: 15vw;
+
+  background-color: #023047;
+  color: #ffb703;
+  border: none;
+  border-radius: 30px;
 }

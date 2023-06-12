@@ -3,17 +3,26 @@ import './style.css';
 import { About } from './About';
 
 export const Header = () => {
-  const [showAbout, setShowAbout] = useState(false)
+  const [showAbout, setShowAbout] = useState(false);
 
   const handleClick = () => {
-    setShowAbout(!showAbout)
-  }
+    setShowAbout(!showAbout);
+  };
 
   return (
     <header>
-      <button className="aboutGame" onClick={handleClick}>?</button>
+      <button className="aboutGame" onClick={handleClick}>
+        ?
+      </button>
       <h1 className="appLogo">Neztrať hlavu!</h1>
-      {showAbout && <About/>}
+      {showAbout && (
+        <div>
+          <button onClick={handleClick} className="close-about-button">
+            ╳
+          </button>
+          <About />
+        </div>
+      )}
     </header>
   );
 };
