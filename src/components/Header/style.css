@@ -1,31 +1,46 @@
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+
   margin: 0;
   width: 100vw;
-  height: 10vH;
+  height: 10vh;
   background-color: #8ecae6;
 
   display: flex;
   flex-direction: row-reverse;
 }
 
-.aboutGame {
+.info__about-btn {
   background-color: #ffb703;
-  border: 1px solid black;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 5vh;
+  border: none;
+  border-left: 1px solid black;
 
   height: 100%;
   aspect-ratio: 1/1;
 }
 
-.appLogo {
-  position: relative;
-  width: 30vw;
+.game__header-title {
+  position: absolute;
+  left: 5vw;
+  width: 80vw;
 
   font-size: 30px;
   font-weight: bold;
-  font-family: "Amatic SC", sans-serif;
+  font-family: "Barrio", sans-serif;
 }
 
-.close-about-button {
+@media (min-width: 840px) {
+  .game__header-title {
+    width: 30vw;
+    left: calc((90vw - 10vh)/2);
+  }
+}
+
+.info__about-closebtn {
   z-index: 2;
   width: 1.5rem;
   height: 1.5rem;

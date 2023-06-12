@@ -11,13 +11,13 @@ export const Header = () => {
 
   return (
     <header>
-      <button className="aboutGame" onClick={handleClick}>
+      <button className="info__about-btn" onClick={handleClick}>
         ?
       </button>
-      <h1 className="appLogo">Neztrať hlavu!</h1>
+      <h1 className="game__header-title">Neztrať hlavu!</h1>
       {showAbout && (
         <div>
-          <button onClick={handleClick} className="close-about-button">
+          <button onClick={handleClick} className="info__about-closebtn">
             ╳
           </button>
           <About />
