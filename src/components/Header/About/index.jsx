@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
 
 export const About = ({ onClose }) => {
+  const handleClick = (event) => {
+    event.preventDefault();
+    if (event.target.id === 'outerElement') {
+      onClose(false);
+    }
+  };
+
   return (
-    <div className="info__about-page">
+    <div className="info__about-page" id="outerElement" onClick={handleClick}>
       <div className="info__about-text">
         <button
           onClick={() => {
