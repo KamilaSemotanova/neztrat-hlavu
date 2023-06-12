@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 
-export const About = () => {
+export const About = ({ onClose }) => {
   return (
     <div className="info__about-page">
       <div className="info__about-text">
+        <button
+          onClick={() => {
+            onClose(false);
+          }}
+          className="info__about-closebtn"
+        >
+          ╳
+        </button>
         <h1 className="info__about-title">Neztrať hlavu!</h1>
         <p>
           Ve této hře se zábavnou formou naučíte, jaké nebezpečí číhá v míchání

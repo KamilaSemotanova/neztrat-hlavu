@@ -6,7 +6,7 @@ export const Header = () => {
   const [showAbout, setShowAbout] = useState(false);
 
   const handleClick = () => {
-    setShowAbout(!showAbout);
+    setShowAbout(true);
   };
 
   return (
@@ -15,14 +15,7 @@ export const Header = () => {
         ?
       </button>
       <h1 className="game__header-title">Neztrať hlavu!</h1>
-      {showAbout && (
-        <div>
-          <button onClick={handleClick} className="info__about-closebtn">
-            ╳
-          </button>
-          <About />
-        </div>
-      )}
+      {showAbout && <About onClose={setShowAbout} />}
     </header>
   );
 };

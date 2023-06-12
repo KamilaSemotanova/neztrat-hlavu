@@ -9,7 +9,7 @@
 }
 
 .info__about-text {
-  position: relative;
+  position: absolute;
   top: 25vh;
   left: 20vw;
 
@@ -26,4 +26,26 @@
 .info__about-title {
   font-family: "Barrio", sans-serif;
   margin: 0;
+}
+
+.info__about-closebtn {
+  z-index: 2;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  position: relative;
+  bottom: 1vh;
+  left: 50vw;
+
+  background-color: #023047;
+  color: #ffb703;
+  border: none;
+  border-radius: 30px;
+}
+
+.info__about-closebtn:hover {
+  border: 0.5px solid #023047;
+  padding: 0;
+  background-color: #ffb703;
+  color: #023047;
 }
