@@ -1,3 +1,123 @@
+.dropdown {
+    margin: 10px auto;
+    padding: 5px 20px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: 0.15s;
+    background-color: #8ecae6;
+    border-radius: 20px;
+    font-family: "Amatic SC", sans-serif;
+    color: #023047;
+}
+
+.dropdown__grid {
+    display: flex;
+    font-family: "Amatic SC", sans-serif;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #8ecae6;
+    border-radius: 20px;
+    color: #023047;
+}
+
+.dropdown__grid-button {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border-left: 2px solid rgba(2, 48, 71, 0.1);
+    border-bottom: 2px solid rgba(2, 48, 71, 0.1);
+    flex: 1 1 33.3333%;
+}
+
+.dropdown__icon {
+    width: 50%;
+    margin: auto;
+}
+
 .dropdown__img {
-    width: 10%;
+    width: 30%;
+}
+
+.dropdown__results {
+    width: 10em;
+    margin: auto;
+    display: flex;
+    column-gap: 0px;
+    justify-content: center;
+    align-items: baseline;
+
+}
+
+.dropdown__flex {
+    flex: 1 0 50%;
+}
+
+
+.dropdown.active .arrow {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.dropdown.active .arrow:before {
+    transform: translate(10px, 0);
+}
+
+.dropdown.active .arrow:after {
+    transform: rotate(90deg) translate(10px, 0);
+}
+
+.arrow {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    position: relative;
+    bottom: -5px;
+    left: -10px;
+    transition: 0.4s ease;
+    margin-top: 2px;
+    text-align: left;
+    transform: rotate(45deg);
+    float: right;
+}
+
+.arrow:before,
+.arrow:after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 3px;
+    background-color: #ffb703;
+    transition: 0.4s ease;
+}
+
+.arrow:after {
+    position: absolute;
+    transform: rotate(90deg);
+    top: -5px;
+    left: 5px;
+}
+
+.dropdown__grid-button .arrow {
+    float: left;
+    margin: 10px 20px;
+    transform: rotate(135deg) scaleX(-1);
+}
+
+.dropdown__btn {
+    margin: auto;
+    padding: 10px;
+    background-color: #ffb703;
+    font-size: 17px;
+    font-family: "Amatic SC", sans-serif;
+    border-radius: 30px;
+    border: none;
+    width: 2.5em;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }

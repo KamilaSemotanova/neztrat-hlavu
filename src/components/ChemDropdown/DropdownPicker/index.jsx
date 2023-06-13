@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import './style.css';
 import {chemicals} from "../../../chemicals";
 import {InfoBox} from "../../InfoBox";
-import {MixResult} from "../../MixResult";
 
-export const DropdownPicker = ({selectForDisabled, onSelect}) => {
+export const DropdownPicker = ({selectForDisabled, onSelect, order}) => {
     const [open, setOpen]  = useState(false);
     const [chemicalUrl, setChemicalUrl] = useState();
     const [chemicalId, setChemicalId] = useState();
@@ -21,43 +20,41 @@ export const DropdownPicker = ({selectForDisabled, onSelect}) => {
     const handleOpen = () => {
         setOpen(!open);
         setChemicalUrl();
+        setChemicalId();
     }
     const handleOpenInfoBox = () => {
         const selectedChemical = chemicals.find(
             (chemical) => chemical.id === chemicalId,
         );
         setChemicalInfo(selectedChemical);
-        console.log(selectedChemical);
     };
 
     return (
         <>
-            <div onClick={handleOpen}>Vyberte první chemikálii:</div>
-            {chemicalUrl ? <img className="dropdown__img" src={chemicalUrl} /> : null}
-            <button
-            className="btn"
+            <div className={open ? "dropdown active" : "dropdown"} onClick={handleOpen}>Vyberte {order} chemikálii: <span className="arrow"></span></div>
+            <div className="dropdown__results container">
+                {chemicalUrl ? <img className="dropdown__icon dropdown__img" src={chemicalUrl} />: null}
+                {chemicalId ? <button
+            className="dropdown__btn"
             type="button"
-            disabled={chemicalId ? false : true}
             onClick={handleOpenInfoBox}
         >
             ?
-        </button>
+                </button> : null}
+            </div>
             {open ? (
-                <div className="chembox__grid container">
-                    <div className="chembox__button" value="">
-                        <img
-                            className="chembox__icon"
-                            src={require('../../../img/rocket.svg')}
-                        />
+                <div className="dropdown__grid container">
+                    <div className="dropdown__grid-button" value="">
+                        <span className="arrow" onClick={handleOpen}></span>
                     </div>
                     {chemicals.map((chemical) => (
-                        <div className={selectForDisabled === chemical.id ? "chembox__button disabled" : "chembox__button"}
+                        <div className={selectForDisabled === chemical.id ? "dropdown__grid-button disabled" : "dropdown__grid-button"}
                              key={chemical.id}
                              value={chemical.id}
                              onClick={() => handleClick(chemical.id)}
                         >
-                            <img className="chembox__icon" src={chemical.url} />
-                            <div>{chemical.id}</div>
+                            <img className="dropdown__icon" src={chemical.url} />
+                            <div>{chemical.nameOfProduct}</div>
                         </div>
                     ))}
                 </div>

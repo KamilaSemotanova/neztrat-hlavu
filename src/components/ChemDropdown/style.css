@@ -4,27 +4,10 @@
     font-family: "Amatic SC", sans-serif;
     border: none;
     border-radius: 30px;
-    width: 5rem;
+    width: 7rem;
+    margin: 10px;
+    padding: 10px;
 }
-
-.chembox__grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    border: 1px solid red;
-}
-
-.chembox__button {
-    padding: 5px;
-    border: 1px solid blue;
-    flex: 1 1 33.3333%;
-}
-.chembox__icon {
-    width: 50%;
-    border: 1px solid cyan;
-}
-
-.disabled {
-    pointer-events: none;
-    opacity: 0.5;
+.chemdropdown__button {
+    text-align: center;
 }
