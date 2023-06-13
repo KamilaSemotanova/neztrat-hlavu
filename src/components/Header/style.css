@@ -1,3 +1,28 @@
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 header {
   position: absolute;
   top: 0;
@@ -14,13 +39,22 @@ header {
 
 .info__about-btn {
   background-color: #ffb703;
-  font-family: "Amatic SC", sans-serif;
-  font-size: 5vh;
   border: none;
   border-left: 1px solid black;
 
   height: 100%;
   aspect-ratio: 1/1;
+}
+
+.info__about-btn_text {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 5vh;
+  display: inline-block;
+}
+
+.info__about-btn_text:hover {
+  animation: shake 2s;
+  animation-iteration-count: infinite;
 }
 
 .game__header-title {
