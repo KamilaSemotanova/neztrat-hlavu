@@ -20,6 +20,7 @@ export const DropdownPicker = ({selectForDisabled, onSelect, order}) => {
     const handleOpen = () => {
         setOpen(!open);
         setChemicalUrl();
+        setChemicalId();
     }
     const handleOpenInfoBox = () => {
         const selectedChemical = chemicals.find(
@@ -31,30 +32,28 @@ export const DropdownPicker = ({selectForDisabled, onSelect, order}) => {
     return (
         <>
             <div className={open ? "dropdown active" : "dropdown"} onClick={handleOpen}>Vyberte {order} chemikálii: <span className="arrow"></span></div>
-            {chemicalUrl ? <img className="dropdown__img" src={chemicalUrl} /> : null}
-            <button
-            className="btn"
+            <div className="dropdown__results container">
+                {chemicalUrl ? <img className="dropdown__icon dropdown__img" src={chemicalUrl} />: null}
+                {chemicalId ? <button
+            className="dropdown__btn"
             type="button"
-            disabled={chemicalId ? false : true}
             onClick={handleOpenInfoBox}
         >
             ?
-        </button>
+                </button> : null}
+            </div>
             {open ? (
-                <div className="chembox__grid container">
-                    <div className="chembox__button" value="">
-                        <img
-                            className="chembox__icon"
-                            src={require('../../../img/rocket.svg')}
-                        />
+                <div className="dropdown__grid container">
+                    <div className="dropdown__grid-button" value="">
+                        <span className="arrow" onClick={handleOpen}></span>
                     </div>
                     {chemicals.map((chemical) => (
-                        <div className={selectForDisabled === chemical.id ? "chembox__button disabled" : "chembox__button"}
+                        <div className={selectForDisabled === chemical.id ? "dropdown__grid-button disabled" : "dropdown__grid-button"}
                              key={chemical.id}
                              value={chemical.id}
                              onClick={() => handleClick(chemical.id)}
                         >
-                            <img className="chembox__icon" src={chemical.url} />
+                            <img className="dropdown__icon" src={chemical.url} />
                             <div>{chemical.nameOfProduct}</div>
                         </div>
                     ))}
