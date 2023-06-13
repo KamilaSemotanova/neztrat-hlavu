@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import './style.css';
 import {chemicals} from "../../../chemicals";
 import {InfoBox} from "../../InfoBox";
-import {MixResult} from "../../MixResult";
 
-export const DropdownPicker = ({selectForDisabled, onSelect}) => {
+export const DropdownPicker = ({selectForDisabled, onSelect, order}) => {
     const [open, setOpen]  = useState(false);
     const [chemicalUrl, setChemicalUrl] = useState();
     const [chemicalId, setChemicalId] = useState();
@@ -27,12 +26,11 @@ export const DropdownPicker = ({selectForDisabled, onSelect}) => {
             (chemical) => chemical.id === chemicalId,
         );
         setChemicalInfo(selectedChemical);
-        console.log(selectedChemical);
     };
 
     return (
         <>
-            <div onClick={handleOpen}>Vyberte první chemikálii:</div>
+            <div className={open ? "dropdown active" : "dropdown"} onClick={handleOpen}>Vyberte {order} chemikálii: <span className="arrow"></span></div>
             {chemicalUrl ? <img className="dropdown__img" src={chemicalUrl} /> : null}
             <button
             className="btn"
@@ -57,7 +55,7 @@ export const DropdownPicker = ({selectForDisabled, onSelect}) => {
                              onClick={() => handleClick(chemical.id)}
                         >
                             <img className="chembox__icon" src={chemical.url} />
-                            <div>{chemical.id}</div>
+                            <div>{chemical.nameOfProduct}</div>
                         </div>
                     ))}
                 </div>
