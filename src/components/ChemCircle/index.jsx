@@ -20,7 +20,6 @@ export const ChemCircle = () => {
   const handleOnDragStart = (id) => {
     if (mixCircleList.includes(draggedElement) === false) {
       setDraggedElement(id);
-      console.log(id);
     }
   };
 
@@ -58,7 +57,7 @@ export const ChemCircle = () => {
   }, []);
 
   const getRadius = (r, delta, index) => {
-    return r + delta * 15 - delta + 20 * (index % 2);
+    return r + delta * 20 - delta + 10 * (index % 2);
   };
 
   const ref = useRef(null);
@@ -69,7 +68,7 @@ export const ChemCircle = () => {
   return (
     <div className="chem_circle" ref={ref}>
       {chemicals.map((chemical, index) => {
-        const angle = (2 * Math.PI * index) / numberOfChemicals;
+        const angle = (2 * Math.PI * (index + 0.5)) / numberOfChemicals;
         const radius = getRadius(width / 7, 5, index);
         const x = radius * Math.cos(angle) + viewX;
         const y = radius * Math.sin(angle) + viewY;
