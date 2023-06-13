@@ -1,3 +1,14 @@
-.chem_circle {
+.chem__circle {
+  position: absolute;
+  left: 0;
+}
+
+.chem__circle-chemicals {
   position: relative;
+  left: calc(100vw / 2);
+}
+
+.chem__circle-mix {
+  position: relative;
+  left: calc(100vw / 2);
 }

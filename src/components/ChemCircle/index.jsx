@@ -20,7 +20,6 @@ export const ChemCircle = () => {
   const handleOnDragStart = (id) => {
     if (mixCircleList.includes(draggedElement) === false) {
       setDraggedElement(id);
-      console.log(id);
     }
   };
 
@@ -58,7 +57,7 @@ export const ChemCircle = () => {
   }, []);
 
   const getRadius = (r, delta, index) => {
-    return r + Math.random() * delta * 2 - delta + 20 * (index % 2);
+    return r + delta * 40 - delta + 10 * (index % 2);
   };
 
   const ref = useRef(null);
@@ -67,62 +66,67 @@ export const ChemCircle = () => {
   const viewY = width / 2;
 
   return (
-    <div className="chem_circle" ref={ref}>
-      {chemicals.map((chemical, index) => {
-        const angle = (2 * Math.PI * index) / numberOfChemicals;
-        const radius = getRadius(width / 7, 5, index);
-        const x = radius * Math.cos(angle) + viewX;
-        const y = radius * Math.sin(angle) + viewY;
+    <div className="chem__circle" ref={ref}>
+      <div className="chem__circle-chemicals">
+        {chemicals.map((chemical, index) => {
+          const angle = (2 * Math.PI * (index + 0.5)) / numberOfChemicals;
+          const radius = getRadius(width / 7, 5, index);
+          const x = radius * Math.cos(angle) + viewX;
+          const y = radius * Math.sin(angle) + viewY;
 
-        return (
-          <>
-            <Chemical
-              key={chemical.id}
-              id={chemical.id}
-              url={chemical.url}
-              name={chemical.nameOfProduct}
-              chemical={chemical.nameOfChemical}
-              products={chemical.otherProducts}
-              use={chemical.use}
-              specs={chemical.specification}
-              warnings={chemical.warningSign}
-              mixList={mixCircleList}
-              onTouchStart={() => {
-                handleOnTouchStart(chemical.id);
-              }}
-              onDragStart={() => handleOnDragStart(chemical.id)}
-              onTouchMove={(event) => {
-                handleOnTouchMove(event);
-              }}
-              onTouchEnd={(event) => {
-                handleOnTouchEnd(event);
-              }}
-              positionX={x}
-              positionY={y}
-            />
-          </>
-        );
-      })}
-      {position.length > 0 && (
-        <img
-          style={{
-            position: 'absolute',
-            width: '50px',
-            height: '50px',
-            top: position[1] + 10,
-            left: position[0] + 10,
-          }}
-          src={chemicals.find((chemical) => chemical.id === draggedElement).url}
+          return (
+            <>
+              <Chemical
+                key={chemical.id}
+                id={chemical.id}
+                url={chemical.url}
+                name={chemical.nameOfProduct}
+                chemical={chemical.nameOfChemical}
+                products={chemical.otherProducts}
+                use={chemical.use}
+                specs={chemical.specification}
+                warnings={chemical.warningSign}
+                mixList={mixCircleList}
+                onTouchStart={() => {
+                  handleOnTouchStart(chemical.id);
+                }}
+                onDragStart={() => handleOnDragStart(chemical.id)}
+                onTouchMove={(event) => {
+                  handleOnTouchMove(event);
+                }}
+                onTouchEnd={(event) => {
+                  handleOnTouchEnd(event);
+                }}
+                positionX={x}
+                positionY={y}
+              />
+            </>
+          );
+        })}
+        {position.length > 0 && (
+          <img
+            style={{
+              position: 'absolute',
+              width: '50px',
+              height: '50px',
+              top: position[1] + 10,
+              left: position[0] + 10,
+            }}
+            src={
+              chemicals.find((chemical) => chemical.id === draggedElement).url
+            }
+          />
+        )}
+        <MixCircle
+          className="chem__circle-mix"
+          disabled={mixCircleList.length === 2 ? true : false}
+          mixList={mixCircleList}
+          onDrop={handleOnDrop}
+          onDragOver={handleOnDragOver}
+          positionX={viewX}
+          positionY={viewY}
         />
-      )}
-      <MixCircle
-        disabled={mixCircleList.length === 2 ? true : false}
-        mixList={mixCircleList}
-        onDrop={handleOnDrop}
-        onDragOver={handleOnDragOver}
-        positionX={viewX}
-        positionY={viewY}
-      />
+      </div>
       {mixCircleList.length === 2 && (
         <MixResult
           chemicalID1={mixCircleList[0]}

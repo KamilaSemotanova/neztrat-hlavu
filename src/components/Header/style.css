@@ -24,7 +24,7 @@
 }
 
 header {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
 
@@ -35,6 +35,7 @@ header {
 
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
 }
 
 .info__about-btn {
