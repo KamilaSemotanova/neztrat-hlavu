@@ -58,7 +58,7 @@ export const ChemCircle = () => {
   }, []);
 
   const getRadius = (r, delta, index) => {
-    return r + Math.random() * delta * 2 - delta + 20 * (index % 2);
+    return r + delta * 15 - delta + 20 * (index % 2);
   };
 
   const ref = useRef(null);
