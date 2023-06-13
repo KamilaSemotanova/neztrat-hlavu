@@ -5,10 +5,7 @@ import './style.css';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { ChemDropdown } from './components/ChemDropdown';
-import { MixCircle } from './components/MixCircle';
 import { ChemCircle } from './components/ChemCircle';
-import { InfoBox } from './components/InfoBox';
-import { chemicals } from './chemicals.js';
 
 const App = () => {
   if (isMobile && !isTablet) {
