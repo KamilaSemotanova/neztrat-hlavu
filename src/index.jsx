@@ -19,8 +19,8 @@ const App = () => {
   } else {
     return (
       <>
-        <Header classname="app-header"/>
-        <ChemCircle classname="app-chemcircle"/>
+        <Header />
+        <ChemCircle />
         <Footer />
       </>
     );
