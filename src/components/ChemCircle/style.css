@@ -6,6 +6,7 @@
 .chem__circle-chemicals {
   position: relative;
   left: calc(100vw / 2);
+  z-index: -1;
 }
 
 .chem__circle-mix {
