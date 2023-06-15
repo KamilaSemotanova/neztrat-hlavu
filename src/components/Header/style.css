@@ -53,9 +53,11 @@ header {
   display: inline-block;
 }
 
-.info__about-btn_text:hover {
-  animation: shake 2s;
-  animation-iteration-count: infinite;
+@media (min-width: 840px) {
+  .info__about-btn_text:hover {
+    animation: shake 2s;
+    animation-iteration-count: 1;
+  }
 }
 
 .game__header-title {
