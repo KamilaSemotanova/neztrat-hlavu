@@ -1,12 +1,19 @@
 footer {
   color: #ffb703;
-
+  position: fixed;
   display: flex;
-  justify-content: space-between;
-
-  position: absolute;
+  justify-content: start;
   bottom: 0;
   width: 100vw;
-
   font-family: "Amatic SC", sans-serif;
+}
+
+.footer__trademark {
+  margin: 0px 5px;
+}
+
+.footer__link {
+  margin: 0px 5px;
+  text-decoration: none;
+  color: #ffb703;
 }
