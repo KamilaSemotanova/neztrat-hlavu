@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 import { chemicals } from '../../chemicals';
-import { isMobile, isTablet } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 export const InfoBox = ({ id, onClose }) => {
   const selectedChemical = chemicals.find((chemical) => chemical.id === id);

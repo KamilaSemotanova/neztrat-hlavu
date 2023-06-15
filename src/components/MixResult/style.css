@@ -24,9 +24,7 @@
 }
 
 .mobile-mixresult__container {
-    position: absolute;
-    left: 20px;
-    top: 100px;
+    width: 90%;
 }
 
 .mixresult__heading {

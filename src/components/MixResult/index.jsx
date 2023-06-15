@@ -1,4 +1,5 @@
             import React from "react";
+            import { isMobile } from 'react-device-detect';
             import { reactionResult } from "./reactions";
             import "./style.css"
 
@@ -8,8 +9,8 @@
               const reaction = reactionResult[reactionID]
 
               return (
-                <div className="mixresult__overlay">
-                    <div className="mixresult__container">
+                <div className={isMobile ? "mixresult__overlay mobile-mixresult__overlay" : "mixresult__overlay"}>
+                    <div className={isMobile ? "mixresult__container mobile-mixresult__container" : "mixresult__container"}>
                   <h3 className="mixresult__heading">{reaction.title}</h3>
                         <div className="mixresult__body">
                   <p>{reaction.reaction}</p>
