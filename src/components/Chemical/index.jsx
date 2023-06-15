@@ -34,7 +34,7 @@ export const Chemical = ({
       }}
     >
       <img src={url} alt="product picture" className="chemicalLogo" />
-      {openInfoBox && <InfoBox id={id} />}
+      {openInfoBox && <InfoBox id={id} onClose={setOpenInfoBox}/>}
     </div>
   );
 };
