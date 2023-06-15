@@ -57,7 +57,7 @@ export const ChemCircle = () => {
   }, []);
 
   const getRadius = (r, delta, index) => {
-    return r + delta * 40 - delta + 10 * (index % 2);
+    return r + delta * 40 - delta + 5 * (index % 2);
   };
 
   const ref = useRef(null);
@@ -80,12 +80,6 @@ export const ChemCircle = () => {
                 key={chemical.id}
                 id={chemical.id}
                 url={chemical.url}
-                name={chemical.nameOfProduct}
-                chemical={chemical.nameOfChemical}
-                products={chemical.otherProducts}
-                use={chemical.use}
-                specs={chemical.specification}
-                warnings={chemical.warningSign}
                 mixList={mixCircleList}
                 onTouchStart={() => {
                   handleOnTouchStart(chemical.id);
