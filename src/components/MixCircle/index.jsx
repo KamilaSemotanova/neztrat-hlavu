@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
 import { chemicals } from '../../chemicals';
-import { MixResult } from '../MixResult';
 
 export const MixCircle = ({
   disabled,
@@ -11,7 +10,6 @@ export const MixCircle = ({
   positionX,
   positionY,
 }) => {
-  console.log(mixList);
 
   return (
     <>

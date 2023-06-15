@@ -1,5 +1,6 @@
 .mixCircle {
-  border: 2px dashed black;
+  display: flex;
+  border: 2px dotted #8ecae6;
   height: 200px;
   aspect-ratio: 1/1;
   border-radius: 100px;
