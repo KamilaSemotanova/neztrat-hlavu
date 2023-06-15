@@ -8,6 +8,7 @@ export const DropdownPicker = ({selectForDisabled, onSelect, order}) => {
     const [chemicalUrl, setChemicalUrl] = useState();
     const [chemicalId, setChemicalId] = useState();
     const [chemicalInfo, setChemicalInfo] = useState();
+    const [infoboxToggle, setInfoboxToggle] = useState(false);
 
     const handleClick = (id) => {
         onSelect(id)
@@ -27,7 +28,12 @@ export const DropdownPicker = ({selectForDisabled, onSelect, order}) => {
             (chemical) => chemical.id === chemicalId,
         );
         setChemicalInfo(selectedChemical);
+        setInfoboxToggle(true)
     };
+
+    const handleCloseInfoBox = () => {
+        setInfoboxToggle(false)
+    }
 
     return (
         <>
@@ -61,12 +67,8 @@ export const DropdownPicker = ({selectForDisabled, onSelect, order}) => {
             ) : null}
             {chemicalInfo && (
                 <InfoBox
-                    name={chemicalInfo.nameOfProduct}
-                    chemical={chemicalInfo.nameOfChemical}
-                    products={chemicalInfo.otherProducts}
-                    use={chemicalInfo.use}
-                    specs={chemicalInfo.specification}
-                    warning={chemicalInfo.warningSign}
+                    id={chemicalInfo.id}
+                    onClose={handleCloseInfoBox}
                 />
             )}
         </>

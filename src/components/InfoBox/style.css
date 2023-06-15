@@ -1,15 +1,61 @@
+.infobox__overlay {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+}
+
+.infobox__hidden {
+    display: none;
+}
+
 .infobox__container {
-    width: 30em;
+    margin: auto;
+    position: absolute;
+    left: 20px;
+    top: 100px;
+    width: 90%;
     background-color: #8ecae6;
-    border: 1px solid red;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
 .infobox__heading {
     width: 100%;
     margin-top: 0;
     border-radius: 15px 15px 0 0;
-    padding:10px;
+    padding:15px 30px;
     font-family: "Amatic SC", sans-serif;
     background-color: #ffb703;
+}
+
+.infobox__body {
+    margin: 20px;
+}
+
+.infobox__btn {
+    background-color: #ffb703;
+    font-size: 17px;
+    font-family: "Amatic SC", sans-serif;
+    border: none;
+    border-radius: 30px;
+    width: 7rem;
+    margin:  10px;
+    padding: 10px;
+}
+.infobox__btn:hover,
+.infobox__btn:focus {
+    background-color: #023047;
+    color: #ffb703;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.infobox__btn-center {
+    text-align: center;
 }

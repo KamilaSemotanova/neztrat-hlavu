@@ -1,18 +1,36 @@
-import React from "react";
-import "./style.css";
+import React, {useState} from 'react';
+import './style.css';
+import { chemicals } from '../../chemicals';
 
+export const InfoBox = ({ id, onClose }) => {
+  const selectedChemical = chemicals.find((chemical) => chemical.id === id);
 
-export const InfoBox = ({name, chemical, products, use, specs, warnings}) => {
-    return (
-        <div className="infobox__container container">
-            <h2 className="infobox__heading">{name}</h2>
-            <div className="infobox-body">
-                <div className="infobox-chemical">{chemical}</div>
-                <div className="infobox-other">{products}</div>
-                <div className="infobox-use">{use}</div>
-                <div className="infobox-specs">{specs}</div>
-                <div className="infobox-warnings">{warnings}</div>
-            </div>
+  const handleClick = (event) => {
+    event.preventDefault();
+    if (event.target.id === 'outerElement') {
+      onClose();
+    }
+    onClose()
+    console.log(onClose)
+  };
+
+  return (
+    <div className="infobox__overlay" onClick={handleClick}>
+      <div className="infobox__container container">
+        <h2 className="infobox__heading">{selectedChemical.nameOfProduct}</h2>
+        <div className="infobox__body">
+          <div className="infobox-chemical">
+            {selectedChemical.nameOfChemical}
+          </div>
+          <div className="infobox-other">{selectedChemical.nameOfProduct}</div>
+          <div className="infobox-use">{selectedChemical.use}</div>
+          <div className="infobox-specs">{selectedChemical.specification}</div>
+          <div className="infobox-warnings">{selectedChemical.warningSign}</div>
         </div>
-    )
-}
+          <div className="infobox__btn-center">
+        <button className="infobox__btn" onClick={handleClick}>Zpět</button>
+          </div>
+      </div>
+    </div>
+  );
+};
