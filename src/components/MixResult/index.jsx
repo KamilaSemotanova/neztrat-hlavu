@@ -3,7 +3,7 @@
             import { reactionResult } from "./reactions";
             import "./style.css"
 
-            export const MixResult = ({chemicalID1, chemicalID2}) => {
+            export const MixResult = ({chemicalID1, chemicalID2, handleClick}) => {
               const reactionID = chemicalID1.localeCompare(chemicalID2) < 0 ? chemicalID1+chemicalID2 : chemicalID2+chemicalID1
 
               const reaction = reactionResult[reactionID]
@@ -17,7 +17,7 @@
                   <p>{reaction.resultInfo}</p>
                         </div>
                         <div className="mixresult__btn-center">
-                        <button className="mixresult__btn">Zpět</button>
+                        <button className="mixresult__btn" onClick={() => handleClick()}>Zpět</button>
                         </div>
                     </div>
                 </div>

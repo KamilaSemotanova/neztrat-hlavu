@@ -15,12 +15,13 @@ export const ChemDropdown = () => {
   };
 
 
+
   return (
       <>
       <DropdownPicker selectForDisabled={select2} onSelect={setSelect1} order="první" />
       <DropdownPicker selectForDisabled={select1} onSelect={setSelect2} order="druhou"/>
         <div className="chemdropdown__button"><button className="btn" disabled={select1 && select2 ? false : true} onClick={handleClick}>Míchat</button></div>
-        {mix ? <MixResult chemicalID1={select1} chemicalID2={select2} /> : null}
+        {mix && select1 && select2 ? <MixResult chemicalID1={select1} chemicalID2={select2} handleClick={handleClick} /> : null}
       </>
   )
 
