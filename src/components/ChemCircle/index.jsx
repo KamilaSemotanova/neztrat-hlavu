@@ -65,6 +65,10 @@ export const ChemCircle = () => {
   const viewX = 300;
   const viewY = width / 2;
 
+  const deleteChems = () => {
+    setMixCircleList([])
+  }
+
   return (
     <div className="chem__circle" ref={ref}>
       <div className="chem__circle-chemicals">
@@ -125,6 +129,7 @@ export const ChemCircle = () => {
         <MixResult
           chemicalID1={mixCircleList[0]}
           chemicalID2={mixCircleList[1]}
+          handleClick={deleteChems}
         />
       )}
     </div>
