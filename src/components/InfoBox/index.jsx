@@ -14,7 +14,8 @@ export const InfoBox = ({ id, onClose }) => {
         }
       >
         <h2 className="infobox__heading">{selectedChemical.nameOfProduct}</h2>
-        <div className="infobox__body">
+        <div className={isMobile ? "infobox__body" : "infobox__body infobox__flex"}>
+          <div>
           <div>
             <h2 className="infobox__bold">Název chemické sloučeniny:</h2>{' '}
             {selectedChemical.nameOfChemical}
@@ -32,6 +33,8 @@ export const InfoBox = ({ id, onClose }) => {
             {selectedChemical.specification}
           </div>
           <div>{selectedChemical.warningSign}</div>
+          </div>
+          {!isMobile ? <img className="infobox__icon" src={selectedChemical.url} /> : null}
         </div>
         {isMobile ? (
           <div className="infobox__btn-center">
