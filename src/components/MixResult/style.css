@@ -6,6 +6,12 @@
     z-index: 1;
 }
 
+.mixresult__icon {
+    position: absolute;
+    top: -1em;
+    left: -1.5em;
+}
+
 .mobile-mixresult__overlay {
     position: fixed;
     padding-top: 100px;
@@ -24,17 +30,18 @@
 }
 
 .mobile-mixresult__container {
-    width: 90%;
+    width: 70%;
 }
 
 .mixresult__heading {
     width: 100%;
     margin-top: 0;
     border-radius: 15px 15px 0 0;
-    padding: 15px 1.4em;
+    padding: 15px 1.8em;
     font-family: "Amatic SC", sans-serif;
     font-size: 2rem;
     background-color: #ffb703;
+    position: relative;
 }
 
 .mixresult__body {
