@@ -46,6 +46,15 @@
     line-height: 1.6;
 }
 
+.infobox__flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infobox__icon {
+    width: 5em;
+}
+
 .infobox__bold {
     font-size: 1.3rem;
     font-family: "Amatic SC";
