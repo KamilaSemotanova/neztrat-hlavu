@@ -1,15 +1,18 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
-import './style.css';
-import { chemicals } from '../../chemicals';
-import { Chemical } from '../Chemical';
-import { MixCircle } from '../MixCircle';
-import { MixResult } from '../MixResult';
+import React, { useState, useRef, useLayoutEffect } from "react";
+import "./style.css";
+import { chemicals } from "../../chemicals";
+import { Chemical } from "../Chemical";
+import { MixCircle } from "../MixCircle";
+import { MixResult } from "../MixResult";
+import { InfoBox } from "../InfoBox";
 
 export const ChemCircle = () => {
   const [draggedElement, setDraggedElement] = useState();
   const [mixCircleList, setMixCircleList] = useState([]);
   const [position, setPosition] = useState([]);
   const [width, setWidth] = useState(0);
+  const [infoBox, setInfoBox] = useState(false);
+  const [selectedChemicalId, setSelectedChemicalId] = useState();
 
   const handleOnTouchStart = (id) => {
     if (mixCircleList.includes(draggedElement) === false) {
@@ -35,9 +38,9 @@ export const ChemCircle = () => {
   const handleOnTouchEnd = (event) => {
     const finalPosition = document.elementFromPoint(
       event.changedTouches[0].pageX,
-      event.changedTouches[0].pageY,
+      event.changedTouches[0].pageY
     );
-    if (finalPosition.classList.value === 'mixCircle') {
+    if (finalPosition.classList.value === "mixCircle") {
       setMixCircleList((prevValue) => [...prevValue, draggedElement]);
     }
     setDraggedElement();
@@ -66,8 +69,17 @@ export const ChemCircle = () => {
   const viewY = width / 2;
 
   const deleteChems = () => {
-    setMixCircleList([])
-  }
+    setMixCircleList([]);
+  };
+
+  const handleOpenInfobox = (id) => {
+    setSelectedChemicalId(id);
+    setInfoBox(true);
+  };
+
+  const handleCloseInfoBox = (close) => {
+    setInfoBox(close);
+  };
 
   return (
     <div className="chem__circle" ref={ref}>
@@ -85,6 +97,7 @@ export const ChemCircle = () => {
                 id={chemical.id}
                 url={chemical.url}
                 mixList={mixCircleList}
+                openInfoBox={handleOpenInfobox}
                 onTouchStart={() => {
                   handleOnTouchStart(chemical.id);
                 }}
@@ -104,9 +117,9 @@ export const ChemCircle = () => {
         {position.length > 0 && (
           <img
             style={{
-              position: 'absolute',
-              width: '50px',
-              height: '50px',
+              position: "absolute",
+              width: "50px",
+              height: "50px",
               top: position[1] + 10,
               left: position[0] + 10,
             }}
@@ -132,6 +145,9 @@ export const ChemCircle = () => {
           handleClick={deleteChems}
         />
       )}
+      {infoBox ? (
+        <InfoBox id={selectedChemicalId} onClose={handleCloseInfoBox} />
+      ) : null}
     </div>
   );
 };

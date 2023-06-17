@@ -36,8 +36,8 @@ export const DropdownPicker = ({
     setInfoboxToggle(!infoboxToggle);
   };
 
-  const handleCloseInfoBox = (open) => {
-    setInfoboxToggle(open);
+  const handleCloseInfoBox = (close) => {
+    setInfoboxToggle(close);
   };
 
   return (
