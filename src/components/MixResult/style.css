@@ -44,9 +44,18 @@
     position: relative;
 }
 
-.mixresult__body {
+.mixresult__body--reaction {
     margin: 3em;
     margin-top: 1.5em;
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.mixresult__body--nothing {
+    margin: 3em;
+    padding-top: 2em;
     font-family: "Raleway", sans-serif;
     font-weight: 100;
     font-size: 0.9rem;
@@ -60,10 +69,11 @@
     border: none;
     border-radius: 30px;
     width: 7rem;
-    margin:  1.5rem;
+    margin: 1.5rem;
     margin-top: 0;
     padding: 10px;
 }
+
 .mixresult__btn:hover,
 .mixresult__btn:focus {
     background-color: #023047;
