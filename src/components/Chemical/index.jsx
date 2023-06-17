@@ -33,7 +33,7 @@ export const Chemical = ({
         transform: `translate(${positionY}px, ${positionX}px )`,
       }}
     >
-      <img src={url} alt="product picture" className="chemicalLogo" />
+      <img src={url} alt={id} className="chemical__logo" />
       {openInfoBox && <InfoBox id={id} onClose={setOpenInfoBox}/>}
     </div>
   );
