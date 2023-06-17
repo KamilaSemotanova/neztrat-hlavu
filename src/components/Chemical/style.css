@@ -3,7 +3,8 @@
   transition: all .3s ease-in-out;
 }
 
-.chemical__logo:hover {
+.chemical__logo:hover,
+.chemical__logo:focus {
   cursor: pointer;
   transform: scale(1.3);
 }
