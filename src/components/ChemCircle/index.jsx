@@ -119,9 +119,9 @@ export const ChemCircle = () => {
             style={{
               position: "absolute",
               width: "50px",
-              height: "50px",
-              top: position[1] + 10,
-              left: position[0] + 10,
+              height: "100px",
+              top: `${position[1] - 150}px`,
+              left: `calc(${position[0] - 80}px - (100vw / 2))`,
             }}
             src={
               chemicals.find((chemical) => chemical.id === draggedElement).url
