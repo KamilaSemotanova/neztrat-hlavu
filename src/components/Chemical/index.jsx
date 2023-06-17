@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import './style.css';
-import { InfoBox } from '../InfoBox';
+import React, { useState } from "react";
+import "./style.css";
 
 export const Chemical = ({
   id,
@@ -12,29 +11,27 @@ export const Chemical = ({
   mixList,
   positionY,
   positionX,
+  openInfoBox,
 }) => {
-  const [openInfoBox, setOpenInfoBox] = useState(false);
-
-  const handleClick = () => {
-    setOpenInfoBox(!openInfoBox);
+  const handleClick = (id) => {
+    openInfoBox(id);
   };
 
   return (
     <div
       draggable
-      onClick={handleClick}
+      onClick={() => handleClick(id)}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       onDragStart={onDragStart}
-      className={mixList.includes(id) ? 'chemical disabled' : 'chemical'}
+      className={mixList.includes(id) ? "chemical disabled" : "chemical"}
       style={{
-        position: 'absolute',
+        position: "absolute",
         transform: `translate(${positionY}px, ${positionX}px )`,
       }}
     >
       <img src={url} alt={id} className="chemical__logo" />
-      {openInfoBox && <InfoBox id={id} onClose={setOpenInfoBox}/>}
     </div>
   );
 };
