@@ -1,5 +1,6 @@
-import savo from "./img/savo.png";
-import ocet from "./img/ocet.png";
+import savo from './img/savo.png';
+import ocet from './img/ocet.png';
+import peroxid from './img/peroxid.png';
 
 export const chemicals = [
   {
@@ -50,7 +51,7 @@ export const chemicals = [
     use: 'Bělící účinky, dezinfekční účinky',
     specification: 'Čirá namodralá kapalina',
     warningSign: 'corrosive, silný oxidant',
-    url: savo,
+    url: peroxid,
   },
   {
     id: 'Savo',
@@ -60,7 +61,7 @@ export const chemicals = [
     use: 'Čištění podlah a povrchů, dezinfekce',
     specification: 'Roztok, smrdí jako bazén',
     warningSign: 'corrosive, dangerous',
-    url: ocet,
+    url: savo,
   },
   {
     id: 'Ethanol',
@@ -73,22 +74,13 @@ export const chemicals = [
     url: savo,
   },
   {
-    id: "Voda",
-    nameOfProduct: 'Voda',
-    nameOfChemical: 'Voda',
-    otherProducts: 'potrubí',
-    use: 'k pití',
-    specification: '???',
+    id: 'Citron',
+    nameOfProduct: 'Kyselina citronová',
+    nameOfChemical: 'Kyselina citronová',
+    otherProducts: 'Citrón',
+    use: 'Vaření, pečení, úklid',
+    specification: 'Bezbarvé krystaly bez zápachu',
     warningSign: 'au',
     url: ocet,
   },
 ];
-
-
-
-
-
-
-
-
-

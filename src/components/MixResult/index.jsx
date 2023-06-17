@@ -49,7 +49,12 @@ export const MixResult = ({ chemicalID1, chemicalID2, handleClick }) => {
             <div className={!isMobile ? "mixresult__flex" : null}>
               <div className="mixresult__body--reaction">
                 <p>{reaction.reaction}</p>
-                <p>{reaction.resultInfo}</p>
+                <p className="mixresult__body--reaction__info">{reaction.resultInfo}</p>
+              </div>
+              <div>
+                <h2 className="mixresult__body--reaction__tip">Co teď?</h2>
+                <br />
+                {reaction.toDo}
               </div>
               <div className="mixresult__combo">
                 <img className="mixresult_img" src={chem1.url} />
