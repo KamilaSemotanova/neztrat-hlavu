@@ -13,6 +13,20 @@
     left: -1.5em;
 }
 
+.mixresult_img {
+    width: 3em;
+}
+
+.mixresult__combo {
+    margin: 2em 1.5em;
+    text-align: center;
+}
+
+.mixresult__flex {
+    display: flex;
+    justify-content: space-between;
+}
+
 .mobile-mixresult__overlay {
     position: fixed;
     padding-top: 100px;
