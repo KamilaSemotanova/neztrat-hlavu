@@ -29,13 +29,13 @@ export const About = ({ onClose }) => {
               experimentovat s těmito látkami a vytvářet různé kombinace, abyste
               zjistili, jaké reakce nastanou.
             </p>
-            <p>
-              <b>A jak na to?</b>
-            </p>
-            <p>
-              Přesuňte dva čistící prostředky do mixovacího pole uprostřed a
-              zjistěte, jak spolu reagují!
-            </p>
+            <div className="info__about-inner_text">
+              <p className="info__about-inner_title">A jak na to?</p>
+              <p>
+                Přesuňte dva čistící prostředky do mixovacího pole uprostřed a
+                zjistěte, jak spolu reagují!
+              </p>
+            </div>
           </div>
           <img
             src={require('./img/erlenmeyer.png')}
