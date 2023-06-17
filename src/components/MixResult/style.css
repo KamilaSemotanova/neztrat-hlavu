@@ -53,6 +53,16 @@
     line-height: 1.6;
 }
 
+.mixresult__body--reaction__info {
+    padding: 2em 0;
+}
+
+.mixresult__body--reaction__tip {
+    font-size: 1.3rem;
+    font-family: "Amatic SC";
+    display: inline;
+}
+
 .mixresult__body--nothing {
     margin: 3em;
     padding-top: 2em;

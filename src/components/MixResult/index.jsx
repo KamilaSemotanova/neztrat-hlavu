@@ -44,7 +44,14 @@ export const MixResult = ({ chemicalID1, chemicalID2, handleClick }) => {
             </h3>
             <div className="mixresult__body--reaction">
               <p>{reaction.reaction}</p>
-              <p>{reaction.resultInfo}</p>
+              <p className="mixresult__body--reaction__info">
+                {reaction.resultInfo}
+              </p>
+              <div>
+                <h2 className="mixresult__body--reaction__tip">Co teď?</h2>
+                <br />
+                {reaction.toDo}
+              </div>
             </div>
           </>
         ) : (
