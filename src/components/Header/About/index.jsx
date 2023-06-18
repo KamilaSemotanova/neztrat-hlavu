@@ -29,10 +29,7 @@ export const About = ({ onClose }) => {
               </p>
             </div>
           </div>
-          <img
-            src={require('./img/erlenmeyer.png')}
-            className="info__about-logo"
-          />
+          <img src={require('./img/erlenmeyer.png')} className="about__logo" />
         </div>
 
         <div className="about__close-center">
