@@ -91,9 +91,8 @@ export const ChemCircle = () => {
           const y = radius * Math.sin(angle) + viewY;
 
           return (
-            <>
+            <div key={chemical.id}>
               <Chemical
-                key={chemical.id}
                 id={chemical.id}
                 url={chemical.url}
                 mixList={mixCircleList}
@@ -111,7 +110,7 @@ export const ChemCircle = () => {
                 positionX={x}
                 positionY={y}
               />
-            </>
+            </div>
           );
         })}
         {position.length > 0 && (
