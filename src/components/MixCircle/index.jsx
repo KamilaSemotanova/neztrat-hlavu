@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import './style.css';
-import { chemicals } from '../../chemicals';
+import React, { useState } from "react";
+import "./style.css";
+import { chemicals } from "../../chemicals";
 
 export const MixCircle = ({
   disabled,
@@ -13,9 +13,9 @@ export const MixCircle = ({
   return (
     <>
       <div
-        className={disabled ? 'mixCircle chemical__disabled' : 'mixCircle'}
+        className={disabled ? "mixCircle chemical__disabled" : "mixCircle"}
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: `calc(${positionX}px - 40px)`,
           left: `calc(${positionY}px - 75px)`,
         }}
@@ -27,7 +27,9 @@ export const MixCircle = ({
               <img
                 key={element}
                 className="chemical__mini"
-                src={chemicals.find((chemical) => chemical.id === element).url}
+                src={
+                  chemicals.find((chemical) => chemical.id === element).alturl
+                }
               />
             ))
           : null}
