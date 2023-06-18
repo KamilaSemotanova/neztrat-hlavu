@@ -132,12 +132,7 @@ export const reactionResult = {
     toDo: "Záleží na rozsahu zranění, v každém případě kontaktujte odborníka, který vám se situací jistě poradí.",
   },
   AcetonAmoniak: {
-    icon: death,
-    title: "Možná se vám špatně dýchá",
-    reaction: "(CH3)2CO + NH3 → C6H13NO",
-    resultInfo:
-      "Produktem reakce je amin, který může při vdechování většího množství způsobit dušnost a kašel.",
-    toDo: "Vyvětrejte nebo se bežte nadýchat čistého vzduchu. Zabraňte dalšímu vdechování, dýchejte pomalu a kontaktujte odborníka.",
+    title: "",
   },
   EthanolPeroxid: {
     title: "",
