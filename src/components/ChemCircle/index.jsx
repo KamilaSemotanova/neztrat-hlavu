@@ -1,10 +1,10 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
-import "./style.css";
-import { chemicals } from "../../chemicals";
-import { Chemical } from "../Chemical";
-import { MixCircle } from "../MixCircle";
-import { MixResult } from "../MixResult";
-import { InfoBox } from "../InfoBox";
+import React, { useState, useRef, useLayoutEffect } from 'react';
+import './style.css';
+import { chemicals } from '../../chemicals';
+import { Chemical } from '../Chemical';
+import { MixCircle } from '../MixCircle';
+import { MixResult } from '../MixResult';
+import { InfoBox } from '../InfoBox';
 
 export const ChemCircle = () => {
   const [draggedElement, setDraggedElement] = useState();
@@ -38,9 +38,9 @@ export const ChemCircle = () => {
   const handleOnTouchEnd = (event) => {
     const finalPosition = document.elementFromPoint(
       event.changedTouches[0].pageX,
-      event.changedTouches[0].pageY
+      event.changedTouches[0].pageY,
     );
-    if (finalPosition.classList.value === "mixCircle") {
+    if (finalPosition.classList.value === 'mixCircle') {
       setMixCircleList((prevValue) => [...prevValue, draggedElement]);
     }
     setDraggedElement();
@@ -117,9 +117,9 @@ export const ChemCircle = () => {
         {position.length > 0 && (
           <img
             style={{
-              position: "absolute",
-              width: "50px",
-              height: "100px",
+              position: 'absolute',
+              width: '50px',
+              height: '100px',
               top: `${position[1] - 150}px`,
               left: `calc(${position[0] - 80}px - (100vw / 2))`,
             }}

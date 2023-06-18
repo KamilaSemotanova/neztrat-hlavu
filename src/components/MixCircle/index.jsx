@@ -10,7 +10,6 @@ export const MixCircle = ({
   positionX,
   positionY,
 }) => {
-
   return (
     <>
       <div
@@ -26,6 +25,7 @@ export const MixCircle = ({
         {mixList
           ? mixList.map((element) => (
               <img
+                key={element}
                 className="chemical__mini"
                 src={chemicals.find((chemical) => chemical.id === element).url}
               />

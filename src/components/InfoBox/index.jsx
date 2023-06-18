@@ -6,8 +6,6 @@ import { isMobile } from 'react-device-detect';
 export const InfoBox = ({ id, onClose }) => {
   const selectedChemical = chemicals.find((chemical) => chemical.id === id);
 
-  console.log(selectedChemical.warningSign);
-
   return (
     <div className="infobox__overlay">
       <div
@@ -37,7 +35,12 @@ export const InfoBox = ({ id, onClose }) => {
               {selectedChemical.specification}
             </div>
             {selectedChemical.warningSign.map((sign) => (
-              <img src={sign.url} alt={sign.id} className="infobox__warn" />
+              <img
+                key={sign.id}
+                src={sign.url}
+                alt={sign.id}
+                className="infobox__warn"
+              />
             ))}
           </div>
           {!isMobile ? (
