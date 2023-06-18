@@ -17,7 +17,7 @@ header {
   background-color: #ffb703;
   border: none;
   border-left: 1px solid black;
-
+  cursor: pointer;
   height: 100%;
   aspect-ratio: 1/1;
 }
