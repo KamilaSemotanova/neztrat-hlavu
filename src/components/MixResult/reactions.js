@@ -114,8 +114,8 @@ export const reactionResult = {
   EthanolCitron: {
     title: "",
   },
-  PeroxidCitron: {
-    title: "",
+  CitronPeroxid: {
+    title: '',
   },
   AmoniakCitron: {
     title: "",
