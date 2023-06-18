@@ -69,6 +69,7 @@
 .about__close-btn:focus {
   background-color: #023047;
   color: #ffb703;
+  transition: 0.3s ease;
   text-decoration: none;
   cursor: pointer;
 }
