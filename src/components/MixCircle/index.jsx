@@ -16,8 +16,8 @@ export const MixCircle = ({
         className={disabled ? 'mixCircle chemical__disabled' : 'mixCircle'}
         style={{
           position: 'absolute',
-          top: `calc(${positionX}px - 70px)`,
-          left: `calc(${positionY}px - 85px)`,
+          top: `calc(${positionX}px - 40px)`,
+          left: `calc(${positionY}px - 75px)`,
         }}
         onDrop={onDrop}
         onDragOver={onDragOver}
