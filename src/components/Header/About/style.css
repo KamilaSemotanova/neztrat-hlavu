@@ -1,16 +1,18 @@
 .about__page {
   position: absolute;
+  display: flex;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  overflow: auto;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
 
 .about__box {
   position: absolute;
-  top: 15vh;
+  top: 10vh;
   left: 20vw;
 
   width: 60vw;
@@ -77,6 +79,10 @@
 }
 
 @media (min-width: 840px) {
+  .about__box {
+    top: 15vh;
+  }
+
   .about__title {
     font-size: 2.8rem;
   }
