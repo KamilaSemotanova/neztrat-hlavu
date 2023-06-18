@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { isMobile } from 'react-device-detect';
-import { reactionResult } from './reactions';
-import './style.css';
-import icon from '../../img/icon.gif';
-import { funfacts } from './funfacts';
-import { chemicals } from '../../chemicals';
+import React, { useState, useEffect } from "react";
+import { isMobile } from "react-device-detect";
+import { reactionResult } from "./reactions";
+import "./style.css";
+import { funfacts } from "./funfacts";
+import { chemicals } from "../../chemicals";
 
 export const MixResult = ({ chemicalID1, chemicalID2, handleClick }) => {
-  const [randomFact, setRandomFact] = useState('');
+  const [randomFact, setRandomFact] = useState("");
 
   const chem1 = chemicals.find((chemical) => chemical.id === chemicalID1);
   const chem2 = chemicals.find((chemical) => chemical.id === chemicalID2);
@@ -29,24 +28,24 @@ export const MixResult = ({ chemicalID1, chemicalID2, handleClick }) => {
     <div
       className={
         isMobile
-          ? 'mixresult__overlay mobile-mixresult__overlay'
-          : 'mixresult__overlay'
+          ? "mixresult__overlay mobile-mixresult__overlay"
+          : "mixresult__overlay"
       }
     >
       <div
         className={
           isMobile
-            ? 'mixresult__container mobile-mixresult__container'
-            : 'mixresult__container'
+            ? "mixresult__container mobile-mixresult__container"
+            : "mixresult__container"
         }
       >
         {reaction.title ? (
           <>
             <h3 className="mixresult__heading">
-              <img className="mixresult__icon" src={icon} />
+              <img className="mixresult__icon" src={reaction.icon} />
               {reaction.title}
             </h3>
-            <div className={!isMobile ? 'mixresult__flex' : null}>
+            <div className={!isMobile ? "mixresult__flex" : null}>
               <div className="mixresult__innerflex">
                 <div className="mixresult__body--reaction">
                   <p>{reaction.reaction}</p>
@@ -56,7 +55,9 @@ export const MixResult = ({ chemicalID1, chemicalID2, handleClick }) => {
                 </div>
                 <div className="mixresult__body--todo">
                   <h2 className="mixresult__body--todo_ask">Co teď?</h2>
-                  <div className="mixresult__body--todo_text">{reaction.toDo}</div>
+                  <div className="mixresult__body--todo_text">
+                    {reaction.toDo}
+                  </div>
                 </div>
               </div>
               <div className="mixresult__combo">
