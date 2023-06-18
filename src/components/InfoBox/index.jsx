@@ -6,8 +6,16 @@ import { isMobile } from 'react-device-detect';
 export const InfoBox = ({ id, onClose }) => {
   const selectedChemical = chemicals.find((chemical) => chemical.id === id);
 
+  const handleClick = (event) => {
+    event.preventDefault();
+    console.log(event);
+    if (event.target.id === 'outer-element') {
+      onClose(false);
+    }
+  };
+
   return (
-    <div className="infobox__overlay">
+    <div className="infobox__overlay" id="outer-element" onClick={handleClick}>
       <div
         className={
           isMobile ? 'infobox__container mobile' : 'infobox__container'

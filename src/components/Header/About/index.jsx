@@ -4,13 +4,13 @@ import './style.css';
 export const About = ({ onClose }) => {
   const handleClick = (event) => {
     event.preventDefault();
-    if (event.target.id === 'outerElement') {
+    if (event.target.id === 'outer-element') {
       onClose(false);
     }
   };
 
   return (
-    <div className="about__page" id="outerElement" onClick={handleClick}>
+    <div className="about__page" id="outer-element" onClick={handleClick}>
       <div className="about__box">
         <h1 className="about__title">Neztrať hlavu!</h1>
         <div className="about__text-box">
