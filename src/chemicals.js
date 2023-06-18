@@ -6,6 +6,14 @@ import krtek from "./img/krtek.png";
 import okena from "./img/okena.png";
 import pulirapid from "./img/pulirapid.png";
 import citron from "./img/citron.png";
+import savoalt from "./img/savoalt.png";
+import ocetalt from "./img/ocetalt.png";
+import peroxidalt from "./img/peroxidalt.png";
+import odlakovacalt from "./img/odlakovacalt.png";
+import krtekalt from "./img/krtekalt.png";
+import okenaalt from "./img/okenaalt.png";
+import pulirapidalt from "./img/pulirapidalt.png";
+import citronalt from "./img/citronalt.png";
 import corrosive from "./img/corrosive.png";
 import flammable from "./img/flammable.png";
 import oxidizer from "./img/oxidizer.png";
@@ -23,6 +31,7 @@ export const chemicals = [
     specification: "Bílý prášek, bez zápachu",
     warningSign: [{ id: "corrosive", url: corrosive }],
     url: krtek,
+    alturl: krtekalt,
   },
   {
     id: "Ocet",
@@ -36,6 +45,7 @@ export const chemicals = [
       { id: "flammable", url: flammable },
     ],
     url: ocet,
+    alturl: ocetalt,
   },
   {
     id: "Aceton",
@@ -46,6 +56,7 @@ export const chemicals = [
     specification: "bezbarvá kapalina s výrazným zápachem",
     warningSign: [{ id: "flammable", url: flammable }],
     url: odlakovac,
+    alturl: odlakovacalt,
   },
   {
     id: "Amoniak",
@@ -60,6 +71,7 @@ export const chemicals = [
       { id: "deadly", url: skull },
     ],
     url: pulirapid,
+    alturl: pulirapidalt,
   },
   {
     id: "Peroxid",
@@ -73,6 +85,7 @@ export const chemicals = [
       { id: "oxidizer", url: oxidizer },
     ],
     url: peroxid,
+    alturl: peroxidalt,
   },
   {
     id: "Savo",
@@ -88,6 +101,7 @@ export const chemicals = [
       { id: "irritating", url: irritating },
     ],
     url: savo,
+    alturl: savoalt,
   },
   {
     id: "Ethanol",
@@ -98,6 +112,7 @@ export const chemicals = [
     specification: "bezbarvá tekutina",
     warningSign: [{ id: "flammable", url: flammable }],
     url: okena,
+    alturl: okenaalt,
   },
   {
     id: "Citron",
@@ -108,5 +123,6 @@ export const chemicals = [
     specification: "Bezbarvé krystaly bez zápachu",
     warningSign: [{ id: "irritating", url: irritating }],
     url: citron,
+    alturl: citronalt,
   },
 ];
