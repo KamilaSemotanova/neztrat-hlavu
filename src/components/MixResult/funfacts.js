@@ -5,7 +5,7 @@ export const funfacts = [
   'Tady se nic nestalo, ale věděli jste, že kocovině se téměř nedá vyhnout? Naše tělo totiž rozkládá ethanol přes meziprodukt acetaldehyd, který je pro naše tělo toxický a způsobuje tak nevolnosti.',
   'Tady se nic nestalo, ale věděli jste, že hydroxid sodný se používá k výrobě mýdel? Skvěle totiž reaguje s tuky a tvoří tak glycerol, který tvoří mýdlo.',
   'Tady se nic nestalo, ale věděli jste, že pach bazénu necítíte proto, že by ho dezinfikovali chlorem? Savo, kterým se bazény čistí, totiž reaguje s močovinou z potu a jiných tělesných tekutin ve vodě. Vzniká tak chloramin, který smrdí jako chlor.',
-  'Tady se nic nestalo, ale věděli jste, že proč je vůně čerstvě posečené trávy příjemná lidem? Podle vědců je to z toho důvodu, že nám vůně připomíná jídlo. Látka, které se říká zelené listové fotily, se uvolňuje, když dozrává ovoce nebo se krájí zelenina.',
+  'Tady se nic nestalo, ale věděli jste, proč je vůně čerstvě posečené trávy příjemná lidem? Podle vědců je to z toho důvodu, že nám vůně připomíná jídlo. Látka, které se říká zelené listové fotily, se uvolňuje, když dozrává ovoce nebo se krájí zelenina.',
   'Tady se nic nestalo, ale věděli jste, že kuchyňská sůl nebo také chlorid sodný je esenciální pro lidský organismus? Je velmi důležitá pro přenos nervových vzruchů, stahování svalů a rovnováhu tělních tekutin.',
   'Tady se nic nestalo, ale věděli jste, že Savo má v sobě už samo o sobě NaOH? Používá se jako konzervant pro chlornan sodný.',
   'Tady se nic nestalo, ale věděli jste, že nerezová ocel může zreznout? Pokud necháte nerez v kontaktu se savem, tak začne korodovat',
