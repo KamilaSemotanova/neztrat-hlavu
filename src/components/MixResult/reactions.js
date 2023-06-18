@@ -59,7 +59,7 @@ export const reactionResult = {
   },
   KrtekPeroxid: {
     icon: heat,
-    title: "Ajaj, popálili jste se!",
+    title: "Ajaj, žere vás krtek!",
     reaction: "NaOH + H2O2 → Na2O2 + H2O",
     resultInfo:
       "Reakce mezi peroxidem vodíku a  hydroxidem sodným je silně exotermní. Při takovém zvýšení teplot může způsobit exotermickou mlhu, která má vysoké teploty.",
@@ -115,7 +115,7 @@ export const reactionResult = {
     title: "",
   },
   CitronPeroxid: {
-    title: '',
+    title: "",
   },
   AmoniakCitron: {
     title: "",
