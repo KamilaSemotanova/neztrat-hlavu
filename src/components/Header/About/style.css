@@ -93,18 +93,33 @@
 
   .about__logo {
     display: block;
-    width: 15vw;
+    width: 10rem;
     opacity: 0.3;
     margin-left: 2rem;
   }
+
+  .about__close-center {
+    padding-top: 0;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   .about__title {
     font-size: 3rem;
   }
 
   .about__box {
+    left: 30vw;
+    width: 40vw;
     font-size: 1.2rem;
+    margin-bottom: 10vh;
+  }
+
+  .about__title {
+    padding-bottom: 0;
+  }
+
+  .about__logo {
+    width: 10rem;
   }
 }
