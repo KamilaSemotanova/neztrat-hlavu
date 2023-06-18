@@ -1,4 +1,9 @@
 .mixresult__overlay {
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: 0;
+
     width: 100vw;
     height: 100vh;
     overflow: auto;
@@ -15,7 +20,7 @@
 
 .mixresult_img {
     height: 9em;
-    padding-bottom:0.8em;
+    padding-bottom: 0.8em;
 
 }
 

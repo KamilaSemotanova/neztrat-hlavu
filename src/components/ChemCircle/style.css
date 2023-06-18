@@ -13,3 +13,9 @@
   position: relative;
   left: calc(100vw / 2);
 }
+
+@media (min-width: 1200px) {
+  .chem__circle-chemicals {
+    left: calc(96vw / 2);
+  }
+}
