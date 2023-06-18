@@ -117,6 +117,14 @@
     width: 2.5em;
 }
 
+.dropdown__btn:hover, .dropdown__btn:focus {
+    background-color: #023047;
+    color: #ffb703;
+    transition: 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .disabled {
     pointer-events: none;
     opacity: 0.5;
