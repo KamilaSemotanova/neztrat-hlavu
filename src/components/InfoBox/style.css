@@ -1,6 +1,6 @@
 .infobox__overlay {
     position: fixed;
-    padding-top: 25vh;
+    display: flex;
     left: 0;
     top: 0;
     width: 100vw;
