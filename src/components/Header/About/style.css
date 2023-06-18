@@ -1,4 +1,4 @@
-.info__about-page {
+.about__page {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,39 +8,71 @@
   -webkit-backdrop-filter: blur(5px);
 }
 
-.info__about-box {
+.about__box {
   position: absolute;
   top: 10vh;
-  left: 10vw;
+  left: 20vw;
 
-  width: 80vw;
-
+  width: 60vw;
   background-color: #8ecae6;
+
+  display: flex;
+  flex-direction: column;
+
   font-family: "Raleway", sans-serif;
   font-size: 0.9rem;
   padding: 2em;
   border-radius: 30px;
 }
 
-.info__about-logo {
-  display: none;
+.about__title {
+  font-family: "Barrio", sans-serif;
+  color: #023047;
+  margin: 0 0 1em 0;
+  font-size: 2.5rem;
 }
 
-
-.info__about-text {
+.about__text-box {
   display: flex;
   align-items: center;
 }
 
-.info__about-header {
-  display: flex;
-  justify-content: space-between;
+.about__inner {
+  padding-top: 1.5em;
 }
 
-.info__about-title {
-  font-family: "Barrio", sans-serif;
-  margin: 0 0 1em 0;
-  font-size: 2.5rem;
+.about__inner-title {
+  padding-bottom: 0.5em;
+  font-size: 1.7rem;
+  font-family: "Amatic SC", sans-serif;
+}
+
+.info__about-logo {
+  display: none;
+}
+
+.about__close-btn {
+  background-color: #ffb703;
+  font-size: 1.3rem;
+  font-family: "Amatic SC", sans-serif;
+  border: none;
+  border-radius: 30px;
+  width: 7rem;
+  margin: 1.5rem;
+  margin-top: 0;
+  padding: 10px;
+}
+
+.about__close-btn:hover,
+.about__close-btn:focus {
+  background-color: #023047;
+  color: #ffb703;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.about__close-center {
+  text-align: center;
 }
 
 @media (min-width: 840px) {
@@ -62,33 +94,4 @@
     opacity: 0.3;
     margin-left: 2rem;
   }
-}
-
-.info__about-closebtn {
-  z-index: 2;
-  width: 1.5rem;
-  height: 1.5rem;
-
-  background-color: #023047;
-  color: #ffb703;
-  border: none;
-  border-radius: 30px;
-}
-
-.info__about-closebtn:hover,
-.info__about-closebtn:focus {
-  border: 0.5px solid #023047;
-  padding: 0;
-  background-color: #ffb703;
-  color: #023047;
-}
-
-.info__about-inner_text {
-  padding-top: 1.5em;
-}
-
-.info__about-inner_title {
-  padding-bottom: 0.5em;
-  font-size: 1.7rem;
-  font-family: "Amatic SC", sans-serif;
 }

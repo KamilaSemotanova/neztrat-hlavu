@@ -10,20 +10,10 @@ export const About = ({ onClose }) => {
   };
 
   return (
-    <div className="info__about-page" id="outerElement" onClick={handleClick}>
-      <div className="info__about-box">
-        <div className="info__about-header">
-          <h1 className="info__about-title">Neztrať hlavu!</h1>
-          <button
-            onClick={() => {
-              onClose(false);
-            }}
-            className="info__about-closebtn"
-          >
-            ╳
-          </button>
-        </div>
-        <div className="info__about-text">
+    <div className="about__page" id="outerElement" onClick={handleClick}>
+      <div className="about__box">
+        <h1 className="about__title">Neztrať hlavu!</h1>
+        <div className="about__text-box">
           <div>
             <p>
               Ve této hře se zábavnou formou naučíte, jaké nebezpečí číhá v
@@ -31,8 +21,8 @@ export const About = ({ onClose }) => {
               experimentovat s těmito látkami a vytvářet různé kombinace, abyste
               zjistili, jaké reakce nastanou.
             </p>
-            <div className="info__about-inner_text">
-              <p className="info__about-inner_title">A jak na to?</p>
+            <div className="about__inner">
+              <p className="about__inner-title">A jak na to?</p>
               <p>
                 Přesuňte dva čistící prostředky do mixovacího pole uprostřed a
                 zjistěte, jak spolu reagují!
@@ -43,6 +33,17 @@ export const About = ({ onClose }) => {
             src={require('./img/erlenmeyer.png')}
             className="info__about-logo"
           />
+        </div>
+
+        <div className="about__close-center">
+          <button
+            className="about__close-btn"
+            onClick={() => {
+              onClose(false);
+            }}
+          >
+            Zpět
+          </button>
         </div>
       </div>
     </div>
