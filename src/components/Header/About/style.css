@@ -81,6 +81,8 @@
 @media (min-width: 840px) {
   .about__box {
     top: 15vh;
+    left: 30vw;
+    width: 40vw;
   }
 
   .about__title {
@@ -109,10 +111,7 @@
   }
 
   .about__box {
-    left: 30vw;
-    width: 40vw;
     font-size: 1.2rem;
-    margin-bottom: 10vh;
   }
 
   .about__title {
