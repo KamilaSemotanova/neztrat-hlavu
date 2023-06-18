@@ -1,4 +1,4 @@
-.info__about-page {
+.about__page {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,55 +8,84 @@
   -webkit-backdrop-filter: blur(5px);
 }
 
-.info__about-box {
+.about__box {
   position: absolute;
-  top: 10vh;
-  left: 10vw;
+  top: 15vh;
+  left: 20vw;
 
-  width: 80vw;
-
+  width: 60vw;
   background-color: #8ecae6;
+
+  display: flex;
+  flex-direction: column;
+
   font-family: "Raleway", sans-serif;
   font-size: 0.9rem;
+  line-height: 1.6;
   padding: 2em;
   border-radius: 30px;
 }
 
-.info__about-logo {
-  display: none;
+.about__title {
+  font-family: "Barrio", sans-serif;
+  color: #023047;
+  padding-bottom: 0.5em;
+  font-size: 2.5rem;
 }
 
-
-.info__about-text {
+.about__text-box {
   display: flex;
   align-items: center;
 }
 
-.info__about-header {
-  display: flex;
-  justify-content: space-between;
+.about__inner {
+  padding-top: 1.5em;
 }
 
-.info__about-title {
-  font-family: "Barrio", sans-serif;
-  margin: 0 0 1em 0;
-  font-size: 2.5rem;
+.about__inner-title {
+  padding-bottom: 0.5em;
+  font-size: 1.7rem;
+  font-family: "Amatic SC", sans-serif;
+}
+
+.about__logo {
+  display: none;
+}
+
+.about__close-btn {
+  background-color: #ffb703;
+  font-size: 1.3rem;
+  font-family: "Amatic SC", sans-serif;
+  border: none;
+  border-radius: 30px;
+  width: 7rem;
+  margin: 1.5rem;
+  padding: 10px;
+}
+
+.about__close-btn:hover,
+.about__close-btn:focus {
+  background-color: #023047;
+  color: #ffb703;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.about__close-center {
+  padding-top: 2em;
+  text-align: center;
 }
 
 @media (min-width: 840px) {
-  .info__about-title {
-    font-size: 40px;
+  .about__title {
+    font-size: 2.8rem;
   }
 
-  .info__about-box {
-    top: 15vh;
-    left: 20vw;
-    width: 60vw;
-
-    font-size: 1.2rem;
+  .about__box {
+    font-size: 1rem;
   }
 
-  .info__about-logo {
+  .about__logo {
     display: block;
     width: 15vw;
     opacity: 0.3;
@@ -64,31 +93,12 @@
   }
 }
 
-.info__about-closebtn {
-  z-index: 2;
-  width: 1.5rem;
-  height: 1.5rem;
+@media (min-width: 1200px) {
+  .about__title {
+    font-size: 3rem;
+  }
 
-  background-color: #023047;
-  color: #ffb703;
-  border: none;
-  border-radius: 30px;
-}
-
-.info__about-closebtn:hover,
-.info__about-closebtn:focus {
-  border: 0.5px solid #023047;
-  padding: 0;
-  background-color: #ffb703;
-  color: #023047;
-}
-
-.info__about-inner_text {
-  padding-top: 1.5em;
-}
-
-.info__about-inner_title {
-  padding-bottom: 0.5em;
-  font-size: 1.7rem;
-  font-family: "Amatic SC", sans-serif;
+  .about__box {
+    font-size: 1.2rem;
+  }
 }
