@@ -53,6 +53,11 @@
     width: 5em;
 }
 
+.infobox__warn {
+    padding-top: 2em;
+    width: 4em;
+}
+
 .infobox__bold {
     font-size: 1.3rem;
     font-family: "Amatic SC";
@@ -66,10 +71,11 @@
     border: none;
     border-radius: 30px;
     width: 7rem;
-    margin:  1.5rem;
+    margin: 1.5rem;
     margin-top: 0;
     padding: 10px;
 }
+
 .infobox__btn:hover,
 .infobox__btn:focus {
     background-color: #023047;
