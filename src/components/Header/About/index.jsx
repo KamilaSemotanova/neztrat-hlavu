@@ -12,15 +12,17 @@ export const About = ({ onClose }) => {
   return (
     <div className="info__about-page" id="outerElement" onClick={handleClick}>
       <div className="info__about-box">
-        <button
-          onClick={() => {
-            onClose(false);
-          }}
-          className="info__about-closebtn"
-        >
-          ╳
-        </button>
-        <h1 className="info__about-title">Neztrať hlavu!</h1>
+        <div className="info__about-header">
+          <h1 className="info__about-title">Neztrať hlavu!</h1>
+          <button
+            onClick={() => {
+              onClose(false);
+            }}
+            className="info__about-closebtn"
+          >
+            ╳
+          </button>
+        </div>
         <div className="info__about-text">
           <div>
             <p>
