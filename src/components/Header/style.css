@@ -31,7 +31,6 @@ header {
 .game__header-title {
   position: absolute;
   left: 5vw;
-  width: 80vw;
 
   font-size: 30px;
   font-weight: bold;
