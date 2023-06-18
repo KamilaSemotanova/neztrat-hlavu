@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import "./style.css";
+import React from 'react';
+import './style.css';
+import { chemicals } from '../../chemicals';
 
 export const Chemical = ({
   id,
@@ -17,6 +18,8 @@ export const Chemical = ({
     openInfoBox(id);
   };
 
+  const selectedChemical = chemicals.find((chemical) => chemical.id === id);
+
   return (
     <div
       draggable
@@ -25,13 +28,18 @@ export const Chemical = ({
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       onDragStart={onDragStart}
-      className={mixList.includes(id) ? "chemical disabled" : "chemical"}
+      className={mixList.includes(id) ? 'chemical disabled' : 'chemical'}
       style={{
-        position: "absolute",
+        position: 'absolute',
         transform: `translate(${positionY}px, ${positionX}px )`,
       }}
     >
-      <img src={url} alt={id} className="chemical__logo" />
+      <img
+        src={url}
+        alt={id}
+        title={selectedChemical.nameOfProduct}
+        className="chemical__logo"
+      />
     </div>
   );
 };
