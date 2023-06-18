@@ -1,3 +1,16 @@
+@keyframes remind {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 footer {
   color: #ffb703;
@@ -10,12 +23,22 @@ footer {
   width: 100vw;
   font-family: "Amatic SC", sans-serif;
   overflow: hidden;
-  transition: 0.7s ease-in-out  ;
+  transition: 0.7s ease-in-out;
+}
+
+footer::after {
+  content: '>>>';
+  position: absolute;
+  top: 0;
+  left: 256px;
+  width: 100%;
+  height: 100%;
+  animation: remind 2s infinite;
 }
 
 
 footer:hover {
-  transform: translateX(145px);
+  transform: translateX(145px);  
 }
 
 .footer__trademark {
